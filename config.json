@@ -1,0 +1,52 @@
+{
+  "version": "3.0",
+  "defaults": {
+    "template": "clean",
+    "accent_color": "#3B82F6",
+    "account_name": "my_account",
+    "slide_count": 7
+  },
+  "templates": {
+    "minimal": {
+      "description": "깔끔하고 전문적인 스타일",
+      "accent_color": "#2D63E2",
+      "background": "light"
+    },
+    "bold": {
+      "description": "강렬하고 임팩트 있는 스타일",
+      "accent_color": "#6C5CE7",
+      "background": "gradient"
+    },
+    "elegant": {
+      "description": "고급스럽고 세련된 스타일",
+      "accent_color": "#D4AF37",
+      "background": "dark"
+    },
+    "premium": {
+      "description": "다크 프리미엄 바이브런트 스타일",
+      "accent_color": "#A855F7",
+      "background": "dark-gradient"
+    },
+    "toss": {
+      "description": "토스 스타일 울트라 미니멀",
+      "accent_color": "#3182F6",
+      "background": "dark-flat"
+    },
+    "magazine": {
+      "description": "매거진 스타일 포토 + 화이트 클린",
+      "accent_color": "#3B82F6",
+      "background": "photo-white"
+    },
+    "clean": {
+      "description": "클린 에디토리얼 스타일 라이트그레이 + 그린 하이라이트",
+      "accent_color": "#8BC34A",
+      "background": "light-gray"
+    }
+  },
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "output_dir": "output",
+  "workspace_dir": "workspace"
+}

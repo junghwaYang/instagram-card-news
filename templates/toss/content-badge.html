@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Badge</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: {{accent_color}};
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+  }
+  .headline {
+    font-size: 80px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.15;
+    white-space: pre-line;
+    margin-bottom: 48px;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin-bottom: 48px;
+  }
+  .body {
+    font-size: 34px;
+    font-weight: 400;
+    color: #8B95A1;
+    line-height: 1.7;
+    white-space: pre-line;
+    margin-bottom: 40px;
+  }
+  .subtext {
+    font-size: 26px;
+    font-weight: 400;
+    color: {{accent_color}};
+    white-space: pre-line;
+  }
+  .footer {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">{{badge_text}}</div>
+    <div class="headline">{{headline}}</div>
+    <div class="divider"></div>
+    <div class="body">{{body}}</div>
+    <div class="subtext">{{subtext}}</div>
+  </div>
+  <div class="footer">
+    <span>@{{account_name}}</span>
+    <span>{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

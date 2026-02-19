@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      background-color: #0D0D1A;
+      font-family: 'Noto Sans KR', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .glow-circle-1 {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.14) 0%, transparent 70%);
+      top: -180px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .glow-circle-2 {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+      bottom: 150px;
+      right: -150px;
+      pointer-events: none;
+    }
+
+    .glow-circle-3 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+      top: 50%;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 72px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .headline-container {
+      margin-bottom: 56px;
+    }
+
+    .headline {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      display: inline-block;
+    }
+
+    .headline-underline {
+      height: 4px;
+      background: linear-gradient(to right, {{accent_color}}, #EC4899);
+      border-radius: 2px;
+      margin-top: 12px;
+      width: 80%;
+    }
+
+    .list-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 22px 24px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      transition: none;
+    }
+
+    .item-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, {{accent_color}}, #EC4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .item-text {
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+      white-space: pre-line;
+      flex: 1;
+    }
+
+    .separator {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 6px 0;
+    }
+
+    /* Footer */
+    .footer {
+      position: relative;
+      z-index: 1;
+      padding: 0 72px 40px;
+    }
+
+    .footer-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5), transparent);
+      margin-bottom: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-account {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-slide {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-circle-1"></div>
+  <div class="glow-circle-2"></div>
+  <div class="glow-circle-3"></div>
+
+  <div class="content-wrapper">
+    <div class="headline-container">
+      <h1 class="headline">{{headline}}</h1>
+      <div class="headline-underline"></div>
+    </div>
+
+    <div class="list-container">
+      <div class="list-item">
+        <div class="item-number">1</div>
+        <p class="item-text">{{item1}}</p>
+      </div>
+      <div class="separator"></div>
+      <div class="list-item">
+        <div class="item-number">2</div>
+        <p class="item-text">{{item2}}</p>
+      </div>
+      <div class="separator"></div>
+      <div class="list-item">
+        <div class="item-number">3</div>
+        <p class="item-text">{{item3}}</p>
+      </div>
+      <div class="separator"></div>
+      <div class="list-item">
+        <div class="item-number">4</div>
+        <p class="item-text">{{item4}}</p>
+      </div>
+      <div class="separator"></div>
+      <div class="list-item">
+        <div class="item-number">5</div>
+        <p class="item-text">{{item5}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-content">
+      <span class="footer-account">@{{account_name}}</span>
+      <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+
+</body>
+</html>

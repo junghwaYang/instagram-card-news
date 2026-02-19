@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine - Content Split</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFFFFF;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 72px 64px 56px;
+      overflow: hidden;
+      position: relative;
+    }
+    .top-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 32px;
+    }
+    .headline {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .vs-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 24px;
+    }
+    .vs-line {
+      flex: 1;
+      height: 1px;
+      background-color: #E5E7EB;
+    }
+    .vs-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #1A1A1A;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+    }
+    .columns {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+    }
+    .col-card {
+      flex: 1;
+      background-color: #F5F5F5;
+      border-radius: 20px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .col-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: {{accent_color}};
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .col-body {
+      font-size: 24px;
+      color: #4B5563;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+    }
+    .middle-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+    .subtext {
+      font-size: 20px;
+      color: #9CA3AF;
+      text-align: center;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 20px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .account-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #9CA3AF;
+      letter-spacing: -0.01em;
+    }
+    .slide-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .slide-current {
+      font-size: 20px;
+      font-weight: 700;
+      color: {{accent_color}};
+    }
+    .slide-sep {
+      font-size: 20px;
+      color: #D1D5DB;
+    }
+    .slide-total {
+      font-size: 20px;
+      font-weight: 500;
+      color: #9CA3AF;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-area">
+      <div class="headline">{{headline}}</div>
+    </div>
+
+    <div class="middle-area">
+      <div class="vs-wrapper">
+        <div class="vs-line"></div>
+        <div class="vs-badge">VS</div>
+        <div class="vs-line"></div>
+      </div>
+      <div class="columns">
+        <div class="col-card">
+          <div class="col-title">{{left_title}}</div>
+          <div class="col-body">{{left_body}}</div>
+        </div>
+        <div class="col-card">
+          <div class="col-title">{{right_title}}</div>
+          <div class="col-body">{{right_body}}</div>
+        </div>
+      </div>
+      <div class="subtext">{{subtext}}</div>
+    </div>
+
+    <div class="footer">
+      <div class="account-name">@{{account_name}}</div>
+      <div class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span>
+        <span class="slide-sep">/</span>
+        <span class="slide-total">{{total_slides}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

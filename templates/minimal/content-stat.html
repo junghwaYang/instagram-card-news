@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Content Stat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 80px;
+      position: relative;
+    }
+    .top-bar {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 60px 0 0 0;
+      flex-shrink: 0;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .center-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+    .emphasis-label {
+      font-size: 22px;
+      font-weight: 500;
+      color: {{accent_color}};
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .emphasis-number {
+      font-size: 200px;
+      font-weight: 900;
+      color: {{accent_color}};
+      line-height: 1;
+      margin: 0 0 20px 0;
+      letter-spacing: -4px;
+    }
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: #E0E0E0;
+      margin: 32px auto;
+    }
+    .headline {
+      font-size: 44px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.35;
+      margin: 0 0 28px 0;
+      word-break: keep-all;
+      max-width: 860px;
+    }
+    .body-text {
+      font-size: 28px;
+      font-weight: 300;
+      color: #777777;
+      line-height: 1.7;
+      word-break: keep-all;
+      max-width: 800px;
+    }
+    .footer {
+      width: 100%;
+      padding: 0 0 50px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .account-name {
+      font-size: 24px;
+      font-weight: 500;
+      color: #BBBBBB;
+      letter-spacing: 0.05em;
+    }
+    .left-accent {
+      position: absolute;
+      left: 0;
+      top: 200px;
+      bottom: 200px;
+      width: 4px;
+      background: {{accent_color}};
+      opacity: 0.15;
+    }
+    .right-accent {
+      position: absolute;
+      right: 0;
+      top: 200px;
+      bottom: 200px;
+      width: 4px;
+      background: {{accent_color}};
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="left-accent"></div>
+    <div class="right-accent"></div>
+    <div class="top-bar">
+      <span class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+    <div class="center-block">
+      <div class="emphasis-label">Key Stat</div>
+      <div class="emphasis-number">{{emphasis}}</div>
+      <div class="divider"></div>
+      <h2 class="headline">{{headline}}</h2>
+      <p class="body-text">{{body}}</p>
+    </div>
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+    </div>
+  </div>
+</body>
+</html>

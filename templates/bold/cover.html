@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Bold Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Geometric background shapes */
+    .shape-1 {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+
+    .shape-2 {
+      position: absolute;
+      bottom: -80px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+
+    .shape-3 {
+      position: absolute;
+      top: 50%;
+      left: -60px;
+      transform: translateY(-50%) rotate(45deg);
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+
+    .shape-4 {
+      position: absolute;
+      top: 200px;
+      right: 60px;
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 1;
+    }
+
+    .category-tag {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 700;
+      padding: 10px 28px;
+      border-radius: 40px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+      padding: 40px 0;
+    }
+
+    .headline {
+      color: #ffffff;
+      font-size: 96px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 3px;
+      margin-bottom: 40px;
+    }
+
+    .subtext {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.6;
+      word-break: keep-all;
+      max-width: 800px;
+    }
+
+    .bottom-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1;
+    }
+
+    .account-name {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .slide-counter {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="shape-3"></div>
+    <div class="shape-4"></div>
+
+    <div class="top-bar">
+      <div class="category-tag">CARD NEWS</div>
+    </div>
+
+    <div class="main-content">
+      <h1 class="headline">{{headline}}</h1>
+      <div class="divider"></div>
+      <p class="subtext">{{subtext}}</p>
+    </div>
+
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Content List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+    .header {
+      padding: 80px 80px 0 80px;
+      flex-shrink: 0;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+      margin-bottom: 36px;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .headline {
+      font-size: 60px;
+      font-weight: 900;
+      color: #1A1A1A;
+      line-height: 1.25;
+      margin: 0;
+      word-break: keep-all;
+    }
+    .list-section {
+      flex: 1;
+      padding: 56px 80px 40px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 32px 0;
+    }
+    .list-item + .list-item {
+      border-top: 1px solid #EBEBEB;
+    }
+    .item-number {
+      font-size: 44px;
+      font-weight: 900;
+      color: {{accent_color}};
+      line-height: 1;
+      width: 64px;
+      flex-shrink: 0;
+      text-align: right;
+      letter-spacing: -0.02em;
+      opacity: 0.9;
+    }
+    .item-divider {
+      width: 1px;
+      height: 44px;
+      background: #DDDDDD;
+      flex-shrink: 0;
+    }
+    .item-text {
+      font-size: 30px;
+      font-weight: 500;
+      color: #222222;
+      line-height: 1.5;
+      word-break: keep-all;
+      margin: 0;
+      flex: 1;
+    }
+    .footer {
+      padding: 0 80px 52px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .account-name {
+      font-size: 24px;
+      font-weight: 500;
+      color: #BBBBBB;
+      letter-spacing: 0.05em;
+    }
+    .slide-indicator-footer {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current-footer {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .bottom-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="header">
+      <div class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </div>
+      <h2 class="headline">{{headline}}</h2>
+    </div>
+    <div class="list-section">
+      <div class="list-item">
+        <span class="item-number">1</span>
+        <div class="item-divider"></div>
+        <p class="item-text">{{item1}}</p>
+      </div>
+      <div class="list-item">
+        <span class="item-number">2</span>
+        <div class="item-divider"></div>
+        <p class="item-text">{{item2}}</p>
+      </div>
+      <div class="list-item">
+        <span class="item-number">3</span>
+        <div class="item-divider"></div>
+        <p class="item-text">{{item3}}</p>
+      </div>
+      <div class="list-item">
+        <span class="item-number">4</span>
+        <div class="item-divider"></div>
+        <p class="item-text">{{item4}}</p>
+      </div>
+      <div class="list-item">
+        <span class="item-number">5</span>
+        <div class="item-divider"></div>
+        <p class="item-text">{{item5}}</p>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-indicator-footer">
+        <span class="slide-current-footer">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+    <div class="bottom-accent"></div>
+  </div>
+</body>
+</html>

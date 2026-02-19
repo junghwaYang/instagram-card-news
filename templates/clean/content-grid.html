@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Content Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 48px;
+    }
+
+    .headline {
+      font-size: 76px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      margin-bottom: 36px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 860px;
+      margin-bottom: 36px;
+    }
+
+    .grid-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 40px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon svg {
+      width: 56px;
+      height: 56px;
+    }
+
+    .card-title {
+      font-size: 36px;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    .card-desc {
+      font-size: 28px;
+      font-weight: 400;
+      color: #9CA3AF;
+    }
+
+    .body-text {
+      font-size: 36px;
+      font-weight: 400;
+      color: #6B7280;
+      text-align: center;
+      line-height: 1.7;
+      word-break: keep-all;
+      padding: 0 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <div class="main">
+    <h2 class="headline">{{headline}}</h2>
+
+    <div class="grid">
+      <div class="grid-card">
+        <span class="card-icon">{{grid1_icon}}</span>
+        <div class="card-title">{{grid1_title}}</div>
+        <div class="card-desc">{{grid1_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <span class="card-icon">{{grid2_icon}}</span>
+        <div class="card-title">{{grid2_title}}</div>
+        <div class="card-desc">{{grid2_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <span class="card-icon">{{grid3_icon}}</span>
+        <div class="card-title">{{grid3_title}}</div>
+        <div class="card-desc">{{grid3_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <span class="card-icon">{{grid4_icon}}</span>
+        <div class="card-title">{{grid4_title}}</div>
+        <div class="card-desc">{{grid4_desc}}</div>
+      </div>
+    </div>
+
+    <p class="body-text">{{body}}</p>
+  </div>
+</body>
+</html>

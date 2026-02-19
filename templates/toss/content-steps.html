@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Steps</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 60px;
+    overflow: hidden;
+  }
+  .headline {
+    font-size: 60px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin-bottom: 56px;
+    white-space: pre-line;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  .step-card {
+    background: #252B36;
+    border-radius: 16px;
+    padding: 32px 36px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .step-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: {{accent_color}};
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 56px;
+  }
+  .step-text {
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.5;
+    white-space: pre-line;
+    padding-top: 4px;
+  }
+  .body-text {
+    font-size: 20px;
+    color: #4E5968;
+    line-height: 1.6;
+    margin-top: 40px;
+    white-space: pre-line;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="headline">{{headline}}</div>
+  <div class="steps">
+    <div class="step-card">
+      <span class="step-number">01</span>
+      <span class="step-text">{{step1}}</span>
+    </div>
+    <div class="step-card">
+      <span class="step-number">02</span>
+      <span class="step-text">{{step2}}</span>
+    </div>
+    <div class="step-card">
+      <span class="step-number">03</span>
+      <span class="step-text">{{step3}}</span>
+    </div>
+  </div>
+  <div class="body-text">{{body}}</div>
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

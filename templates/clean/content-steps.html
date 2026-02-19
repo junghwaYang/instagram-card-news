@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Content Steps</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 48px;
+    }
+
+    .headline {
+      font-size: 76px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      margin-bottom: 24px;
+    }
+
+    .subtext {
+      font-size: 38px;
+      font-weight: 400;
+      color: #6B7280;
+      text-align: center;
+      line-height: 1.65;
+      word-break: keep-all;
+      margin-bottom: 32px;
+      padding: 0 24px;
+    }
+
+    .checklist {
+      width: 100%;
+      max-width: 840px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .check-item {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .check-mark {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    .check-mark svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .check-text {
+      font-size: 40px;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    .body-text {
+      font-size: 36px;
+      font-weight: 400;
+      color: #6B7280;
+      text-align: center;
+      line-height: 1.7;
+      word-break: keep-all;
+      padding: 0 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <div class="main">
+    <h2 class="headline">{{headline}}</h2>
+    <p class="subtext">{{subtext}}</p>
+
+    <div class="checklist">
+      <div class="check-item">
+        <span class="check-mark"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="{{accent_color}}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span class="check-text">{{step1}}</span>
+      </div>
+      <div class="check-item">
+        <span class="check-mark"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="{{accent_color}}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span class="check-text">{{step2}}</span>
+      </div>
+      <div class="check-item">
+        <span class="check-mark"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="{{accent_color}}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span class="check-text">{{step3}}</span>
+      </div>
+    </div>
+
+    <p class="body-text">{{body}}</p>
+  </div>
+</body>
+</html>

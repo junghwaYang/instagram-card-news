@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Elegant Content Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background-color: #1A1A2E;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #1A1A2E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 0 76px;
+    }
+
+    /* Subtle background grid texture */
+    .bg-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(0deg, rgba(212,175,55,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,175,55,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    /* Corner decorations */
+    .corner {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+    }
+    .corner-tl {
+      top: 52px;
+      left: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.5);
+      border-left: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-tr {
+      top: 52px;
+      right: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.5);
+      border-right: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-bl {
+      bottom: 90px;
+      left: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+      border-left: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-br {
+      bottom: 90px;
+      right: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+      border-right: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 64px 0 0 0;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .slide-counter {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.12em;
+    }
+
+    .headline-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0 44px 0;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .frame-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .frame-line {
+      width: 80px;
+      height: 1px;
+      background-color: {{accent_color}};
+      opacity: 0.7;
+    }
+    .frame-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: {{accent_color}};
+      flex-shrink: 0;
+    }
+    .headline {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.3;
+      color: #F5F0E8;
+      text-align: center;
+      word-break: keep-all;
+      letter-spacing: 0.02em;
+    }
+    .frame-bottom {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid-card {
+      background: rgba(212, 175, 55, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 22px;
+      text-align: center;
+      position: relative;
+    }
+    /* Gold top accent line */
+    .grid-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20%;
+      right: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, {{accent_color}}, transparent);
+    }
+
+    .card-icon {
+      font-size: 54px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #F5F0E8;
+      margin-bottom: 10px;
+      word-break: keep-all;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+    }
+    .card-desc {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: rgba(224, 224, 224, 0.7);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    /* Bottom */
+    .bottom-line {
+      position: absolute;
+      bottom: 74px;
+      left: 76px;
+      right: 76px;
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.2);
+    }
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 76px;
+      z-index: 1;
+    }
+    .account-name {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(212, 175, 55, 0.7);
+      letter-spacing: 0.06em;
+    }
+    .slide-num {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bg-lines"></div>
+
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="top-bar">
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+
+    <div class="headline-block">
+      <div class="frame-top">
+        <div class="frame-line"></div>
+        <div class="frame-dot"></div>
+        <div class="frame-line"></div>
+      </div>
+      <h2 class="headline">{{headline}}</h2>
+      <div class="frame-bottom">
+        <div class="frame-line"></div>
+        <div class="frame-dot"></div>
+        <div class="frame-line"></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="grid-card">
+        <div class="card-icon">{{grid1_icon}}</div>
+        <div class="card-title">{{grid1_title}}</div>
+        <div class="card-desc">{{grid1_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid2_icon}}</div>
+        <div class="card-title">{{grid2_title}}</div>
+        <div class="card-desc">{{grid2_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid3_icon}}</div>
+        <div class="card-title">{{grid3_title}}</div>
+        <div class="card-desc">{{grid3_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid4_icon}}</div>
+        <div class="card-title">{{grid4_title}}</div>
+        <div class="card-desc">{{grid4_desc}}</div>
+      </div>
+    </div>
+
+    <div class="bottom-line"></div>
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-num">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

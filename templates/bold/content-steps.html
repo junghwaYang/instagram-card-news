@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 100px;
+  }
+
+  /* Decorative background shapes */
+  .bg-circle-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    top: -120px;
+    right: -150px;
+    pointer-events: none;
+  }
+
+  .bg-square {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    bottom: 100px;
+    left: -80px;
+    transform: rotate(30deg);
+    pointer-events: none;
+  }
+
+  .bg-circle-2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    bottom: 250px;
+    right: 60px;
+    pointer-events: none;
+  }
+
+  /* Header section */
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .label-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .headline {
+    font-size: 56px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  /* Steps container */
+  .steps-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Vertical connecting line */
+  .connector-line {
+    position: absolute;
+    left: 36px;
+    top: 80px;
+    bottom: 80px;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      rgba(255,255,255,0.6),
+      rgba(255,255,255,0.2),
+      rgba(255,255,255,0.6)
+    );
+    pointer-events: none;
+  }
+
+  /* Step item */
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 36px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    position: relative;
+    transition: none;
+  }
+
+  .step-item + .step-item {
+    margin-top: 28px;
+  }
+
+  .step-number {
+    font-size: 64px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    min-width: 80px;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 20px rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+
+  .step-divider {
+    width: 2px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+    border-radius: 2px;
+  }
+
+  .step-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.45;
+    flex: 1;
+  }
+
+  /* Body text */
+  .body-text {
+    margin-top: 32px;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+  }
+
+  .account-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+  }
+
+  .slide-counter {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bg-circle-1"></div>
+  <div class="bg-square"></div>
+  <div class="bg-circle-2"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label-tag">STEP BY STEP</div>
+    <div class="headline">{{headline}}</div>
+  </div>
+
+  <!-- Steps -->
+  <div class="steps-container">
+    <div class="step-item">
+      <div class="step-number">01</div>
+      <div class="step-divider"></div>
+      <div class="step-text">{{step1}}</div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-number">02</div>
+      <div class="step-divider"></div>
+      <div class="step-text">{{step2}}</div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-number">03</div>
+      <div class="step-divider"></div>
+      <div class="step-text">{{step3}}</div>
+    </div>
+
+    <div class="body-text">{{body}}</div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</div>
+</body>
+</html>

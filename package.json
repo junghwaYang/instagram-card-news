@@ -1,0 +1,12 @@
+{
+  "name": "instagram-card-news",
+  "version": "1.0.0",
+  "description": "Instagram card news generator with team agent orchestration",
+  "scripts": {
+    "render": "node scripts/render.js",
+    "sample": "node scripts/generate-samples.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

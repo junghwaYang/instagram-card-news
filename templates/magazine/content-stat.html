@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Content - Stat</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      position: relative;
+    }
+
+    .page {
+      width: 1080px;
+      height: 1350px;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 80px 64px;
+      position: relative;
+    }
+
+    /* Top label */
+    .label {
+      font-size: 24px;
+      font-weight: 600;
+      color: #6B7280;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      word-break: keep-all;
+    }
+
+    /* Center stat area */
+    .stat-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .emphasis {
+      font-size: 180px;
+      font-weight: 900;
+      color: {{accent_color}};
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 3px;
+      background: {{accent_color}};
+      border-radius: 2px;
+      margin-top: 32px;
+    }
+
+    .body-text {
+      font-size: 30px;
+      font-weight: 400;
+      color: #4B5563;
+      line-height: 1.7;
+      margin-top: 40px;
+      white-space: pre-line;
+      word-break: keep-all;
+      max-width: 860px;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid #F3F4F6;
+    }
+
+    .account {
+      font-size: 20px;
+      font-weight: 500;
+      color: #9CA3AF;
+      letter-spacing: 0.02em;
+    }
+
+    .slide-number {
+      font-size: 20px;
+      font-weight: 400;
+      color: #9CA3AF;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="label">{{headline}}</div>
+
+    <div class="stat-area">
+      <div class="emphasis">{{emphasis}}</div>
+      <div class="accent-line"></div>
+      <p class="body-text">{{body}}</p>
+    </div>
+
+    <div class="footer">
+      <span class="account">@{{account_name}}</span>
+      <span class="slide-number">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

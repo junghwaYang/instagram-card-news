@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Elegant Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background-color: #1A1A2E;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #1A1A2E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 80px;
+    }
+
+    /* Corner decorations */
+    .corner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+    .corner-tl {
+      top: 50px;
+      left: 50px;
+      border-top: 1px solid {{accent_color}};
+      border-left: 1px solid {{accent_color}};
+    }
+    .corner-tr {
+      top: 50px;
+      right: 50px;
+      border-top: 1px solid {{accent_color}};
+      border-right: 1px solid {{accent_color}};
+    }
+    .corner-bl {
+      bottom: 100px;
+      left: 50px;
+      border-bottom: 1px solid {{accent_color}};
+      border-left: 1px solid {{accent_color}};
+    }
+    .corner-br {
+      bottom: 100px;
+      right: 50px;
+      border-bottom: 1px solid {{accent_color}};
+      border-right: 1px solid {{accent_color}};
+    }
+
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      gap: 0;
+    }
+
+    .line-top {
+      width: 320px;
+      height: 1px;
+      background-color: {{accent_color}};
+      margin-bottom: 48px;
+    }
+
+    .headline {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 1.35;
+      color: #F5F0E8;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px 0;
+      white-space: pre-line;
+    }
+
+    .line-bottom {
+      width: 320px;
+      height: 1px;
+      background-color: {{accent_color}};
+      margin-top: 48px;
+      margin-bottom: 52px;
+    }
+
+    .subtext {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.7;
+      color: rgba(245, 240, 232, 0.6);
+      letter-spacing: 0.05em;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    /* Dot accent */
+    .dot-accent {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: {{accent_color}};
+      margin: 0 auto 48px auto;
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+    }
+
+    .account-name {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: {{accent_color}};
+      letter-spacing: 0.08em;
+    }
+
+    .slide-counter {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+    }
+
+    .bottom-line {
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+      right: 80px;
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Corner decorations -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Main content -->
+    <div class="center-content">
+      <div class="line-top"></div>
+      <h1 class="headline">{{headline}}</h1>
+      <div class="line-bottom"></div>
+      <div class="dot-accent"></div>
+      <p class="subtext">{{subtext}}</p>
+    </div>
+
+    <!-- Bottom separator -->
+    <div class="bottom-line"></div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

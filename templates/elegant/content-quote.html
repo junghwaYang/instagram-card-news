@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Elegant Content Quote</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background-color: #1A1A2E;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #1A1A2E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 80px 100px;
+    }
+
+    /* Subtle vignette overlay */
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%);
+      pointer-events: none;
+    }
+
+    /* Top accent line */
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 5%, {{accent_color}} 50%, transparent 95%);
+    }
+
+    /* Corner marks */
+    .corner {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+    }
+    .corner-tl {
+      top: 52px;
+      left: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.45);
+      border-left: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .corner-tr {
+      top: 52px;
+      right: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.45);
+      border-right: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .corner-bl {
+      bottom: 100px;
+      left: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+      border-left: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .corner-br {
+      bottom: 100px;
+      right: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+      border-right: 1px solid rgba(212, 175, 55, 0.45);
+    }
+
+    /* Quote block */
+    .quote-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Large quotation mark */
+    .quote-mark-open {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 400;
+      font-size: 160px;
+      line-height: 0.7;
+      color: {{accent_color}};
+      opacity: 0.6;
+      margin-bottom: 24px;
+      display: block;
+      align-self: flex-start;
+      margin-left: 20px;
+    }
+
+    /* Quote text */
+    .quote-text {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 1.75;
+      color: #F5F0E8;
+      margin: 0;
+      white-space: pre-line;
+      letter-spacing: 0.01em;
+    }
+
+    /* Closing quote mark */
+    .quote-mark-close {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 400;
+      font-size: 160px;
+      line-height: 0.7;
+      color: {{accent_color}};
+      opacity: 0.6;
+      margin-top: 24px;
+      display: block;
+      align-self: flex-end;
+      margin-right: 20px;
+    }
+
+    /* Attribution separator */
+    .attr-separator {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 52px;
+      margin-bottom: 24px;
+    }
+    .attr-line {
+      width: 60px;
+      height: 1px;
+      background-color: {{accent_color}};
+    }
+    .attr-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: {{accent_color}};
+    }
+
+    /* Attribution / headline */
+    .attribution {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: rgba(245, 240, 232, 0.55);
+      letter-spacing: 0.12em;
+      text-align: center;
+      white-space: pre-line;
+    }
+
+    /* Bottom */
+    .bottom-line {
+      position: absolute;
+      bottom: 80px;
+      left: 85px;
+      right: 85px;
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.2);
+    }
+
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 85px;
+    }
+
+    .account-name {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(212, 175, 55, 0.7);
+      letter-spacing: 0.06em;
+    }
+
+    .slide-counter {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="vignette"></div>
+    <div class="top-accent"></div>
+
+    <!-- Corner marks -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Quote block -->
+    <div class="quote-block">
+      <span class="quote-mark-open">&ldquo;</span>
+      <p class="quote-text">{{body}}</p>
+      <span class="quote-mark-close">&rdquo;</span>
+
+      <div class="attr-separator">
+        <div class="attr-line"></div>
+        <div class="attr-dot"></div>
+        <div class="attr-line"></div>
+      </div>
+      <p class="attribution">{{headline}}</p>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-line"></div>
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

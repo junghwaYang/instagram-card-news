@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Elegant CTA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background-color: #1A1A2E;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #1A1A2E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 80px 90px;
+    }
+
+    /* Top accent line */
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 5%, {{accent_color}} 50%, transparent 95%);
+    }
+
+    /* Bottom accent line */
+    .bottom-accent {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 5%, rgba(212,175,55,0.25) 50%, transparent 95%);
+    }
+
+    /* Corner decorations */
+    .corner {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+    }
+    .corner-tl {
+      top: 52px;
+      left: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.5);
+      border-left: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-tr {
+      top: 52px;
+      right: 52px;
+      border-top: 1px solid rgba(212, 175, 55, 0.5);
+      border-right: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-bl {
+      bottom: 100px;
+      left: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+      border-left: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .corner-br {
+      bottom: 100px;
+      right: 52px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+      border-right: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    /* Center content */
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      gap: 0;
+    }
+
+    /* Small decorative line above headline */
+    .deco-line-top {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(180deg, transparent, {{accent_color}});
+      margin-bottom: 44px;
+    }
+
+    /* Headline */
+    .headline {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 1.4;
+      color: #F5F0E8;
+      margin: 0 0 56px 0;
+      white-space: pre-line;
+      letter-spacing: -0.01em;
+    }
+
+    /* CTA button — thin gold outlined */
+    .cta-button {
+      display: inline-block;
+      padding: 20px 64px;
+      border: 1px solid {{accent_color}};
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      color: {{accent_color}};
+      letter-spacing: 0.12em;
+      text-align: center;
+      white-space: nowrap;
+      margin-bottom: 72px;
+      /* Subtle inner glow on hover — static for static render */
+      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.08);
+    }
+
+    /* Thin horizontal rule */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+    .divider-line {
+      width: 80px;
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.3);
+    }
+    .divider-diamond {
+      width: 6px;
+      height: 6px;
+      border: 1px solid {{accent_color}};
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* Account name */
+    .account-name-large {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 26px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+      margin-bottom: 28px;
+    }
+
+    /* Save/share hint */
+    .share-hint {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: rgba(245, 240, 232, 0.3);
+      letter-spacing: 0.2em;
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 90px;
+    }
+
+    .account-name-small {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(212, 175, 55, 0.6);
+      letter-spacing: 0.06em;
+    }
+
+    .slide-counter {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="bottom-accent"></div>
+
+    <!-- Corner decorations -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Center content -->
+    <div class="center-content">
+      <div class="deco-line-top"></div>
+      <h2 class="headline">{{headline}}</h2>
+      <div class="cta-button">{{cta_text}}</div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="account-name-large">@{{account_name}}</div>
+      <div class="share-hint">저장 &middot; 공유</div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+      <span class="account-name-small">@{{account_name}}</span>
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean - Split</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      display: inline-block;
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 48px;
+    }
+
+    .headline {
+      font-size: 76px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      word-break: keep-all;
+    }
+
+    .subtext {
+      font-size: 38px;
+      color: #9CA3AF;
+      text-align: center;
+      margin-bottom: 48px;
+      word-break: keep-all;
+    }
+
+    .split-container {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      max-width: 880px;
+      position: relative;
+      align-items: stretch;
+    }
+
+    .card {
+      flex: 1;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 40px 32px;
+    }
+
+    .card-title {
+      font-size: 44px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 24px;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .card-body {
+      font-size: 38px;
+      color: #6B7280;
+      line-height: 1.7;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .vs-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #1A1A1A;
+      color: #FFFFFF;
+      font-size: 26px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <div class="content">
+    <h1 class="headline">{{headline}}</h1>
+    <p class="subtext">{{subtext}}</p>
+
+    <div class="split-container">
+      <div class="card">
+        <div class="card-title">{{left_title}}</div>
+        <div class="card-body">{{left_body}}</div>
+      </div>
+
+      <div class="vs-badge">VS</div>
+
+      <div class="card">
+        <div class="card-title">{{right_title}}</div>
+        <div class="card-body">{{right_body}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

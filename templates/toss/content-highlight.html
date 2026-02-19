@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Highlight</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 60px;
+    overflow: hidden;
+  }
+  .headline {
+    font-size: 36px;
+    font-weight: 500;
+    color: #8B95A1;
+    line-height: 1.4;
+    margin-bottom: 48px;
+    white-space: pre-line;
+  }
+  .highlight-card {
+    background: #252B36;
+    border-radius: 16px;
+    padding: 48px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .emphasis {
+    font-size: 68px;
+    font-weight: 700;
+    color: {{accent_color}};
+    line-height: 1.2;
+    white-space: pre-line;
+  }
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 40px 0;
+    flex-shrink: 0;
+  }
+  .body-text {
+    font-size: 32px;
+    font-weight: 400;
+    color: #8B95A1;
+    line-height: 1.7;
+    white-space: pre-line;
+    flex: 1;
+  }
+  .subtext {
+    font-size: 18px;
+    color: #4E5968;
+    margin-top: 40px;
+    white-space: pre-line;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="headline">{{headline}}</div>
+  <div class="highlight-card">
+    <div class="emphasis">{{emphasis}}</div>
+    <div class="divider"></div>
+    <div class="body-text">{{body}}</div>
+  </div>
+  <div class="subtext">{{subtext}}</div>
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

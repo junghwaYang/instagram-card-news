@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magazine - CTA</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(160deg, #1f1f1f 0%, #1A1A1A 50%, #111111 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+      position: relative;
+    }
+
+    /* Subtle texture overlay */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      gap: 0;
+    }
+
+    /* Subtitle */
+    .subtext {
+      font-size: 28px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+      word-break: keep-all;
+    }
+
+    /* Massive Headline */
+    .headline {
+      font-size: 80px;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1.2;
+      word-break: keep-all;
+      margin-bottom: 60px;
+    }
+
+    .headline .highlight {
+      color: {{accent_color}};
+    }
+
+    /* Hashtag Badge Row */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .tag-badge {
+      background-color: {{accent_color}};
+      color: #FFFFFF;
+      border-radius: 50px;
+      padding: 14px 32px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background-color: #FFFFFF;
+      color: #1A1A1A;
+      border-radius: 50px;
+      padding: 22px 64px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 48px;
+      white-space: nowrap;
+    }
+
+    /* Contact Line */
+    .contact-line {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px 40px;
+    }
+
+    .footer-account {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-slide {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Subtitle -->
+    <p class="subtext">{{subtext}}</p>
+
+    <!-- Massive Headline -->
+    <h1 class="headline">{{headline}}</h1>
+
+    <!-- Hashtag Badge Row -->
+    <div class="tag-row">
+      <span class="tag-badge">{{tag1}}</span>
+      <span class="tag-badge">{{tag2}}</span>
+      <span class="tag-badge">{{tag3}}</span>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="cta-button">{{cta_text}}</div>
+
+    <!-- Contact Line -->
+    <p class="contact-line">@{{account_name}}</p>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-account">@{{account_name}}</span>
+      <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+    </div>
+
+  </div>
+</body>
+</html>

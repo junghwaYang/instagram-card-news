@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal CTA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 80px;
+      position: relative;
+    }
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+    .top-bar {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 60px 0 0 0;
+      flex-shrink: 0;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .center-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      gap: 0;
+    }
+    .cta-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: {{accent_color}};
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .headline {
+      font-size: 66px;
+      font-weight: 900;
+      color: #1A1A1A;
+      line-height: 1.25;
+      margin: 0 0 56px 0;
+      word-break: keep-all;
+      max-width: 860px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: {{accent_color}};
+      color: #FFFFFF;
+      font-size: 32px;
+      font-weight: 700;
+      padding: 28px 72px;
+      border-radius: 60px;
+      letter-spacing: 0.04em;
+      margin-bottom: 72px;
+    }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #E0E0E0;
+      margin: 0 auto 48px auto;
+    }
+    .account-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .account-label {
+      font-size: 22px;
+      font-weight: 300;
+      color: #AAAAAA;
+      letter-spacing: 0.05em;
+    }
+    .account-name {
+      font-size: 40px;
+      font-weight: 700;
+      color: #1A1A1A;
+      letter-spacing: 0.05em;
+    }
+    .action-hints {
+      display: flex;
+      gap: 48px;
+      margin-top: 60px;
+    }
+    .action-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .action-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid #E0E0E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .action-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+    .action-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #AAAAAA;
+      letter-spacing: 0.05em;
+    }
+    .footer {
+      width: 100%;
+      padding: 0 0 50px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .footer-slide {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+    }
+    .bottom-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="top-bar">
+      <span class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+    <div class="center-block">
+      <div class="cta-label">마지막 페이지</div>
+      <h2 class="headline">{{headline}}</h2>
+      <div class="cta-button">{{cta_text}}</div>
+      <div class="divider"></div>
+      <div class="account-block">
+        <span class="account-label">팔로우하고 더 많은 콘텐츠 보기</span>
+        <span class="account-name">@{{account_name}}</span>
+      </div>
+      <div class="action-hints">
+        <div class="action-hint">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </div>
+          <span class="action-text">저장</span>
+        </div>
+        <div class="action-hint">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </div>
+          <span class="action-text">공유</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+    </div>
+    <div class="bottom-accent"></div>
+  </div>
+</body>
+</html>

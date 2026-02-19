@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 80px 100px;
+  }
+
+  /* Decorative large background circles */
+  .bg-circle-1 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+  }
+
+  .bg-circle-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.025);
+    bottom: -150px;
+    left: -150px;
+    pointer-events: none;
+  }
+
+  .bg-circle-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    bottom: 200px;
+    right: 100px;
+    pointer-events: none;
+  }
+
+  .bg-square {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.04);
+    top: 200px;
+    left: -40px;
+    transform: rotate(25deg);
+    pointer-events: none;
+  }
+
+  /* Badge pill */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 12px 32px;
+    margin-bottom: 44px;
+  }
+
+  .badge-text {
+    font-size: 18px;
+    font-weight: 900;
+    color: #1a1a2e;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Headline */
+  .headline {
+    font-size: 72px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 920px;
+  }
+
+  /* Accent line */
+  .accent-line {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    margin-bottom: 36px;
+  }
+
+  /* Body text */
+  .body-text {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
+    max-width: 860px;
+    margin-bottom: 40px;
+  }
+
+  /* Subtext */
+  .subtext {
+    font-size: 19px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    max-width: 760px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+  }
+
+  .account-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+  }
+
+  .slide-counter {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="bg-circle-3"></div>
+  <div class="bg-square"></div>
+
+  <!-- Badge -->
+  <div class="badge">
+    <span class="badge-text">{{badge_text}}</span>
+  </div>
+
+  <!-- Headline -->
+  <div class="headline">{{headline}}</div>
+
+  <!-- Accent line -->
+  <div class="accent-line"></div>
+
+  <!-- Body -->
+  <div class="body-text">{{body}}</div>
+
+  <!-- Subtext -->
+  <div class="subtext">{{subtext}}</div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</div>
+</body>
+</html>

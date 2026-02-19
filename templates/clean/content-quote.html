@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Quote</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 60px;
+      position: relative;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+      letter-spacing: 0.01em;
+    }
+
+    .icon-area {
+      height: 380px;
+      flex-shrink: 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 12px;
+    }
+
+    .quote-mark {
+      font-size: 60px;
+      color: {{accent_color}};
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .headline {
+      font-size: 70px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      margin-bottom: 28px;
+    }
+
+    .body-text {
+      font-size: 40px;
+      font-weight: 400;
+      color: #6B7280;
+      text-align: center;
+      line-height: 1.75;
+      word-break: keep-all;
+      padding: 0 24px;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand top-left -->
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <!-- Empty space for 3D icon -->
+  <div class="icon-area"></div>
+
+  <!-- Content centered -->
+  <div class="content">
+    <div class="quote-mark">&#x275D;</div>
+    <h1 class="headline">{{headline}}</h1>
+    <p class="body-text">{{body}}</p>
+  </div>
+
+</body>
+</html>

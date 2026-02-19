@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Bold Content Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 64px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Geometric background shapes */
+    .shape-ring-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+    .shape-ring-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1050px;
+      height: 1050px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+    .shape-dot-1 {
+      position: absolute;
+      top: 100px;
+      left: 70px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      pointer-events: none;
+    }
+    .shape-dot-2 {
+      position: absolute;
+      top: 140px;
+      left: 110px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+    .shape-block {
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 255, 255, 0.04);
+      transform: rotate(20deg);
+      pointer-events: none;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .slide-label {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .slide-counter {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .headline {
+      color: #ffffff;
+      font-size: 52px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.25;
+      word-break: keep-all;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      flex: 1;
+      z-index: 1;
+    }
+
+    /* Frosted glass cards */
+    .grid-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .card-icon {
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      word-break: keep-all;
+      line-height: 1.3;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    }
+    .card-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+
+    .bottom-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .account-name {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .bottom-counter {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="shape-ring-1"></div>
+    <div class="shape-ring-2"></div>
+    <div class="shape-dot-1"></div>
+    <div class="shape-dot-2"></div>
+    <div class="shape-block"></div>
+
+    <div class="top-bar">
+      <div class="slide-label">KEY POINTS</div>
+      <div class="slide-counter">{{slide_number}} / {{total_slides}}</div>
+    </div>
+
+    <h2 class="headline">{{headline}}</h2>
+
+    <div class="grid">
+      <div class="grid-card">
+        <div class="card-icon">{{grid1_icon}}</div>
+        <div class="card-title">{{grid1_title}}</div>
+        <div class="card-desc">{{grid1_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid2_icon}}</div>
+        <div class="card-title">{{grid2_title}}</div>
+        <div class="card-desc">{{grid2_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid3_icon}}</div>
+        <div class="card-title">{{grid3_title}}</div>
+        <div class="card-desc">{{grid3_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid4_icon}}</div>
+        <div class="card-title">{{grid4_title}}</div>
+        <div class="card-desc">{{grid4_desc}}</div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="bottom-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

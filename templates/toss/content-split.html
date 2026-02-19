@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Split</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 72px 60px;
+    overflow: hidden;
+  }
+  .headline {
+    font-size: 56px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 56px;
+    white-space: pre-line;
+    width: 100%;
+  }
+  .split-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    flex: 1;
+  }
+  .split-card {
+    background: #252B36;
+    border-radius: 16px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  .vs-text {
+    font-size: 16px;
+    color: #4E5968;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: {{accent_color}};
+    line-height: 1.3;
+    white-space: pre-line;
+  }
+  .card-body {
+    font-size: 28px;
+    font-weight: 400;
+    color: #8B95A1;
+    line-height: 1.6;
+    white-space: pre-line;
+  }
+  .subtext {
+    font-size: 20px;
+    color: #4E5968;
+    text-align: center;
+    margin-top: 40px;
+    white-space: pre-line;
+    width: 100%;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    flex-shrink: 0;
+    width: 100%;
+  }
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="headline">{{headline}}</div>
+  <div class="split-row">
+    <div class="split-card">
+      <div class="card-title">{{left_title}}</div>
+      <div class="card-body">{{left_body}}</div>
+    </div>
+    <div class="vs-text">vs</div>
+    <div class="split-card">
+      <div class="card-title">{{right_title}}</div>
+      <div class="card-body">{{right_body}}</div>
+    </div>
+  </div>
+  <div class="subtext">{{subtext}}</div>
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

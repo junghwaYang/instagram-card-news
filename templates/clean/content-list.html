@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Content List</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 48px;
+      width: 100%;
+    }
+
+    .headline {
+      font-size: 76px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.3;
+      word-break: keep-all;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 3px;
+      background: {{accent_color}};
+      margin-bottom: 40px;
+      flex-shrink: 0;
+    }
+
+    .list {
+      width: 100%;
+      max-width: 840px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .number-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      color: #FFFFFF;
+      font-size: 30px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .item-text {
+      font-size: 40px;
+      font-weight: 500;
+      color: #1A1A1A;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <div class="content">
+    <h2 class="headline">{{headline}}</h2>
+    <div class="accent-line"></div>
+
+    <div class="list">
+      <div class="list-item">
+        <div class="number-circle">1</div>
+        <span class="item-text">{{item1}}</span>
+      </div>
+      <div class="list-item">
+        <div class="number-circle">2</div>
+        <span class="item-text">{{item2}}</span>
+      </div>
+      <div class="list-item">
+        <div class="number-circle">3</div>
+        <span class="item-text">{{item3}}</span>
+      </div>
+      <div class="list-item">
+        <div class="number-circle">4</div>
+        <span class="item-text">{{item4}}</span>
+      </div>
+      <div class="list-item">
+        <div class="number-circle">5</div>
+        <span class="item-text">{{item5}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

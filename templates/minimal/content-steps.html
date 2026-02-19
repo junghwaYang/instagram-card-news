@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Content Steps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F8F9FA;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #F8F9FA;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+    .header {
+      padding: 80px 80px 0 80px;
+      flex-shrink: 0;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+      margin-bottom: 36px;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .headline {
+      font-size: 60px;
+      font-weight: 900;
+      color: #1A1A1A;
+      line-height: 1.25;
+      margin: 0;
+      word-break: keep-all;
+    }
+    .steps-section {
+      flex: 1;
+      padding: 60px 80px 32px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .step-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .step-row {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 72px;
+    }
+    .step-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-number {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.05em;
+    }
+    .step-connector {
+      width: 2px;
+      height: 56px;
+      background: repeating-linear-gradient(
+        to bottom,
+        {{accent_color}} 0px,
+        {{accent_color}} 6px,
+        transparent 6px,
+        transparent 12px
+      );
+      margin: 6px auto;
+      opacity: 0.4;
+    }
+    .step-content {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px 36px;
+      flex: 1;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .step-text {
+      font-size: 30px;
+      font-weight: 500;
+      color: #222222;
+      line-height: 1.5;
+      word-break: keep-all;
+      margin: 0;
+    }
+    .body-section {
+      padding: 0 80px 0 80px;
+      flex-shrink: 0;
+    }
+    .body-text {
+      font-size: 26px;
+      font-weight: 300;
+      color: #888888;
+      line-height: 1.65;
+      word-break: keep-all;
+      margin: 0;
+    }
+    .footer {
+      padding: 32px 80px 52px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .account-name {
+      font-size: 24px;
+      font-weight: 500;
+      color: #BBBBBB;
+      letter-spacing: 0.05em;
+    }
+    .bottom-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="header">
+      <div class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </div>
+      <h2 class="headline">{{headline}}</h2>
+    </div>
+    <div class="steps-section">
+      <!-- Step 1 -->
+      <div class="step-wrapper">
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-circle">
+              <span class="step-number">01</span>
+            </div>
+          </div>
+          <div class="step-content">
+            <p class="step-text">{{step1}}</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-connector"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="step-wrapper">
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-circle">
+              <span class="step-number">02</span>
+            </div>
+          </div>
+          <div class="step-content">
+            <p class="step-text">{{step2}}</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-connector"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="step-wrapper">
+        <div class="step-row">
+          <div class="step-left">
+            <div class="step-circle">
+              <span class="step-number">03</span>
+            </div>
+          </div>
+          <div class="step-content">
+            <p class="step-text">{{step3}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body-section">
+      <p class="body-text">{{body}}</p>
+    </div>
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+    </div>
+    <div class="bottom-accent"></div>
+  </div>
+</body>
+</html>

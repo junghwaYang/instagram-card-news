@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 100px;
+  }
+
+  /* Decorative background shapes */
+  .bg-circle-1 {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    top: -100px;
+    right: -120px;
+    pointer-events: none;
+  }
+
+  .bg-circle-2 {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    bottom: 120px;
+    left: -80px;
+    pointer-events: none;
+  }
+
+  .bg-square {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.04);
+    bottom: 300px;
+    right: 80px;
+    transform: rotate(20deg);
+    pointer-events: none;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 52px;
+  }
+
+  .label-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* List container */
+  .list-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* List item */
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 0;
+    position: relative;
+  }
+
+  .list-item + .list-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Number circle */
+  .item-number {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    flex-shrink: 0;
+    letter-spacing: 0;
+  }
+
+  .item-text {
+    font-size: 27px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .item-arrow {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+  }
+
+  .account-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+  }
+
+  .slide-counter {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="bg-square"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label-tag">LIST</div>
+    <div class="headline">{{headline}}</div>
+  </div>
+
+  <!-- Numbered List -->
+  <div class="list-container">
+    <div class="list-item">
+      <div class="item-number">1</div>
+      <div class="item-text">{{item1}}</div>
+      <div class="item-arrow">›</div>
+    </div>
+    <div class="list-item">
+      <div class="item-number">2</div>
+      <div class="item-text">{{item2}}</div>
+      <div class="item-arrow">›</div>
+    </div>
+    <div class="list-item">
+      <div class="item-number">3</div>
+      <div class="item-text">{{item3}}</div>
+      <div class="item-arrow">›</div>
+    </div>
+    <div class="list-item">
+      <div class="item-number">4</div>
+      <div class="item-text">{{item4}}</div>
+      <div class="item-arrow">›</div>
+    </div>
+    <div class="list-item">
+      <div class="item-number">5</div>
+      <div class="item-text">{{item5}}</div>
+      <div class="item-arrow">›</div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</div>
+</body>
+</html>

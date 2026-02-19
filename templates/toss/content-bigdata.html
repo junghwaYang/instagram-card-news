@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Big Data</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 60px;
+    overflow: hidden;
+  }
+  .headline-label {
+    font-size: 28px;
+    font-weight: 600;
+    color: #8B95A1;
+    letter-spacing: 0.05em;
+    margin-bottom: 48px;
+    white-space: pre-line;
+  }
+  .number-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .bigdata-number {
+    font-size: 160px;
+    font-weight: 800;
+    color: {{accent_color}};
+    line-height: 1;
+  }
+  .bigdata-unit {
+    font-size: 52px;
+    font-weight: 600;
+    color: #8B95A1;
+    line-height: 1;
+  }
+  .accent-line {
+    width: 48px;
+    height: 3px;
+    background: {{accent_color}};
+    margin-bottom: 48px;
+    flex-shrink: 0;
+  }
+  .body-text {
+    font-size: 34px;
+    font-weight: 400;
+    color: #8B95A1;
+    line-height: 1.7;
+    white-space: pre-line;
+    flex: 1;
+  }
+  .subtext {
+    font-size: 18px;
+    color: #4E5968;
+    margin-top: 40px;
+    white-space: pre-line;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="headline-label">{{headline}}</div>
+  <div class="number-row">
+    <span class="bigdata-number">{{bigdata_number}}</span>
+    <span class="bigdata-unit">{{bigdata_unit}}</span>
+  </div>
+  <div class="accent-line"></div>
+  <div class="body-text">{{body}}</div>
+  <div class="subtext">{{subtext}}</div>
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Bold CTA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Geometric background shapes */
+    .shape-1 {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      pointer-events: none;
+    }
+
+    .shape-2 {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+
+    .shape-3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+
+    .shape-4 {
+      position: absolute;
+      top: 200px;
+      left: 60px;
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transform: rotate(20deg);
+      pointer-events: none;
+    }
+
+    .shape-5 {
+      position: absolute;
+      bottom: 260px;
+      right: 70px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 1;
+    }
+
+    .slide-label {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+      gap: 0;
+    }
+
+    .cta-eyebrow {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .headline {
+      color: #ffffff;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      margin-bottom: 60px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #ffffff;
+      color: #1a1a2e;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      padding: 26px 72px;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+      word-break: keep-all;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      margin-bottom: 60px;
+    }
+
+    .social-cues {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .cue-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cue-icon {
+      width: 56px;
+      height: 56px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Save icon */
+    .icon-save::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 24px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 2px 2px 0 0;
+    }
+    .icon-save::after {
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 9px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Share icon */
+    .icon-share::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      top: 10px;
+    }
+    .icon-share::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      width: 20px;
+      height: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .cue-label {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .cue-divider {
+      width: 2px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 1px;
+    }
+
+    .bottom-bar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      z-index: 1;
+    }
+
+    .account-name {
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .slide-counter {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="shape-3"></div>
+    <div class="shape-4"></div>
+    <div class="shape-5"></div>
+
+    <div class="top-bar">
+      <div class="slide-label">ACTION</div>
+    </div>
+
+    <div class="main-content">
+      <div class="cta-eyebrow">지금 바로</div>
+      <h1 class="headline">{{headline}}</h1>
+      <div class="cta-button">{{cta_text}}</div>
+      <div class="social-cues">
+        <div class="cue-item">
+          <div class="cue-icon icon-save"></div>
+          <span class="cue-label">저장하기</span>
+        </div>
+        <div class="cue-divider"></div>
+        <div class="cue-item">
+          <div class="cue-icon icon-share"></div>
+          <span class="cue-label">공유하기</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Content</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #F0F0F0;
+      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 72px;
+      width: 100%;
+    }
+
+    .badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      flex-shrink: 0;
+    }
+
+    .headline {
+      font-size: 76px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      margin-bottom: 40px;
+    }
+
+    .highlight {
+      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
+      color: #1A1A1A;
+      padding: 0 4px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 3px;
+      background: {{accent_color}};
+      margin-bottom: 40px;
+      flex-shrink: 0;
+    }
+
+    .body-text {
+      font-size: 40px;
+      font-weight: 400;
+      color: #6B7280;
+      text-align: center;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span class="brand-name">{{account_name}}</span>
+  </div>
+
+  <div class="content">
+    <div class="badge">{{badge_number}}</div>
+    <h2 class="headline">{{headline}}</h2>
+    <div class="accent-line"></div>
+    <p class="body-text">{{body}}</p>
+  </div>
+</body>
+</html>

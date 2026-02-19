@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Stat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      background-color: #0D0D1A;
+      font-family: 'Noto Sans KR', sans-serif;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glow-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+    }
+    .glow-1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, transparent 70%);
+      top: -80px;
+      left: -60px;
+    }
+    .glow-2 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(236,72,153,0.08) 0%, transparent 70%);
+      bottom: 80px;
+      right: -40px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 72px 0;
+      text-align: center;
+    }
+
+    .headline-label {
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 64px;
+    }
+
+    /* Glassmorphism card */
+    .card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 72px 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Circular glow behind big number */
+    .number-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,85,247,0.18) 0%, transparent 65%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      pointer-events: none;
+    }
+
+    .emphasis {
+      font-size: 160px;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, {{accent_color}}, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+
+    .body-text {
+      font-size: 30px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      white-space: pre-line;
+      word-break: keep-all;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+    .footer-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,0.3), rgba(236,72,153,0.3), transparent);
+    }
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+    }
+    .footer-text {
+      font-size: 20px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-circle glow-1"></div>
+  <div class="glow-circle glow-2"></div>
+
+  <div class="content">
+    <div class="headline-label">{{headline}}</div>
+    <div class="card">
+      <div class="number-glow"></div>
+      <div class="emphasis">{{emphasis}}</div>
+      <p class="body-text">{{body}}</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-bar">
+      <span class="footer-text">@{{account_name}}</span>
+      <span class="footer-text">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </footer>
+</body>
+</html>

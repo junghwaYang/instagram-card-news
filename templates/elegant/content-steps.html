@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Elegant — Step-by-Step Process</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: #1A1A2E;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #1A1A2E;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 100px 100px;
+  }
+
+  /* Background grid texture */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Corner brackets */
+  .corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: {{accent_color}};
+    border-style: solid;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  .corner-tl { top: 36px; left: 36px; border-width: 2px 0 0 2px; }
+  .corner-tr { top: 36px; right: 36px; border-width: 2px 2px 0 0; }
+  .corner-bl { bottom: 36px; left: 36px; border-width: 0 0 2px 2px; }
+  .corner-br { bottom: 36px; right: 36px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 72px;
+  }
+
+  .pre-label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.85;
+  }
+
+  .headline {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #F5F0E8;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+
+  .headline-line {
+    width: 60px;
+    height: 2px;
+    background: {{accent_color}};
+    opacity: 0.7;
+  }
+
+  /* ── STEPS ── */
+  .steps-container {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 56px;
+  }
+
+  .step:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Vertical dotted line connecting steps */
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 68px;
+    bottom: 0;
+    width: 1px;
+    background: repeating-linear-gradient(
+      to bottom,
+      {{accent_color}} 0px,
+      {{accent_color}} 4px,
+      transparent 4px,
+      transparent 12px
+    );
+    opacity: 0.4;
+  }
+
+  .step-number-col {
+    flex-shrink: 0;
+    width: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .step-number {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: {{accent_color}};
+    line-height: 1;
+    display: block;
+  }
+
+  .step-content {
+    flex: 1;
+    padding-left: 36px;
+    padding-top: 8px;
+  }
+
+  .step-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, {{accent_color}}, transparent);
+    opacity: 0.35;
+    margin-bottom: 18px;
+  }
+
+  .step-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #E8E4DC;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── BODY / FOOTER NOTE ── */
+  .body-note {
+    position: relative;
+    z-index: 1;
+    margin-top: 56px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #888899;
+    line-height: 1.6;
+  }
+
+  /* ── BOTTOM BAR ── */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index: 10;
+  }
+
+  .bottom-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 60px;
+    right: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, {{accent_color}}, transparent);
+    opacity: 0.5;
+  }
+
+  .account-name {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.08em;
+  }
+
+  .slide-counter {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- Corner brackets -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="pre-label">Process</div>
+    <h1 class="headline">{{headline}}</h1>
+    <div class="headline-line"></div>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps-container">
+
+    <div class="step">
+      <div class="step-number-col">
+        <span class="step-number">01</span>
+      </div>
+      <div class="step-content">
+        <div class="step-line"></div>
+        <p class="step-text">{{step1}}</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col">
+        <span class="step-number">02</span>
+      </div>
+      <div class="step-content">
+        <div class="step-line"></div>
+        <p class="step-text">{{step2}}</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col">
+        <span class="step-number">03</span>
+      </div>
+      <div class="step-content">
+        <div class="step-line"></div>
+        <p class="step-text">{{step3}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BODY NOTE -->
+  <div class="body-note">{{body}}</div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+
+</div>
+</body>
+</html>

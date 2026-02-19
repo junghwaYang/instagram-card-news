@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      background-color: #0D0D1A;
+      font-family: 'Noto Sans KR', sans-serif;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glow-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+    }
+    .glow-1 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(168,85,247,0.09) 0%, transparent 70%);
+      top: -60px;
+      right: -60px;
+    }
+    .glow-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 70%);
+      bottom: 100px;
+      left: -40px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px 0;
+    }
+
+    .label {
+      font-size: 18px;
+      font-weight: 700;
+      color: {{accent_color}};
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    /* Glassmorphism card */
+    .card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 60px;
+    }
+
+    .headline {
+      font-size: 64px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      white-space: pre-line;
+      word-break: keep-all;
+      margin-bottom: 36px;
+    }
+
+    .body-text {
+      font-size: 32px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      white-space: pre-line;
+      word-break: keep-all;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+    .footer-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168,85,247,0.3), rgba(236,72,153,0.3), transparent);
+    }
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+    }
+    .footer-text {
+      font-size: 20px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-circle glow-1"></div>
+  <div class="glow-circle glow-2"></div>
+
+  <div class="content">
+    <div class="label">{{headline}}</div>
+    <div class="card">
+      <h2 class="headline">{{headline}}</h2>
+      <p class="body-text">{{body}}</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-bar">
+      <span class="footer-text">@{{account_name}}</span>
+      <span class="footer-text">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </footer>
+</body>
+</html>

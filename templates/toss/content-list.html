@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content List</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: #191F28;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 60px;
+    overflow: hidden;
+  }
+  .headline {
+    font-size: 60px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin-bottom: 56px;
+    white-space: pre-line;
+  }
+  .list-card {
+    background: #252B36;
+    border-radius: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px 36px;
+  }
+  .list-item + .list-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .item-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: {{accent_color}};
+    line-height: 1.4;
+    flex-shrink: 0;
+    min-width: 36px;
+  }
+  .item-text {
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="headline">{{headline}}</div>
+  <div class="list-card">
+    <div class="list-item">
+      <span class="item-number">1</span>
+      <span class="item-text">{{item1}}</span>
+    </div>
+    <div class="list-item">
+      <span class="item-number">2</span>
+      <span class="item-text">{{item2}}</span>
+    </div>
+    <div class="list-item">
+      <span class="item-number">3</span>
+      <span class="item-text">{{item3}}</span>
+    </div>
+    <div class="list-item">
+      <span class="item-number">4</span>
+      <span class="item-text">{{item4}}</span>
+    </div>
+    <div class="list-item">
+      <span class="item-number">5</span>
+      <span class="item-text">{{item5}}</span>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</body>
+</html>

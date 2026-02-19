@@ -1,0 +1,124 @@
+[
+  {
+    "slide": 1,
+    "type": "cover",
+    "headline": "2025 <span class='highlight'>디지털 마케팅</span>\n트렌드 가이드",
+    "headline_label": "<span class='highlight'>카드뉴스</span>",
+    "subtext": "성공적인 마케팅을 위한 <span class='highlight'>핵심 인사이트</span>",
+    "tag1": "#디지털마케팅",
+    "tag2": "#AI트렌드",
+    "tag3": "#2025전략"
+  },
+  {
+    "slide": 2,
+    "type": "content-badge",
+    "badge_text": "TREND",
+    "badge_number": "01",
+    "headline": "AI가 마케팅의\n<span class='highlight'>판도를 바꾼다</span>",
+    "body": "AI 기반 콘텐츠 생성과 자동화가\n마케팅 산업의 <span class='highlight'>새로운 표준</span>이 되고 있습니다.",
+    "subtext": "2025년 최대 화두"
+  },
+  {
+    "slide": 3,
+    "type": "content-stat",
+    "headline": "AI <span class='highlight'>마케팅 도입률</span>",
+    "emphasis": "78%",
+    "body": "글로벌 기업의 78%가 마케팅에\n<span class='highlight'>AI 도구</span>를 활용하고 있습니다."
+  },
+  {
+    "slide": 4,
+    "type": "content-image",
+    "badge_number": "02",
+    "headline": "<span class='highlight'>숏폼 콘텐츠</span>의 시대",
+    "body": "15초 이내의 짧은 영상이\n가장 높은 <span class='highlight'>참여율</span>을 기록하고 있습니다.\n릴스, 쇼츠, 틱톡이 핵심 채널입니다.",
+    "image_url": ""
+  },
+  {
+    "slide": 5,
+    "type": "content-steps",
+    "headline": "AI 마케팅 <span class='highlight'>도입 3단계</span>",
+    "step1": "현재 마케팅 프로세스 분석 및 자동화 가능 영역 파악",
+    "step2": "AI 도구 선정 및 파일럿 테스트 진행",
+    "step3": "성과 측정 후 전사 확대 적용",
+    "body": ""
+  },
+  {
+    "slide": 6,
+    "type": "content-list",
+    "headline": "2025 <span class='highlight'>핵심 마케팅 채널</span>",
+    "item1": "Instagram Reels — 숏폼 콘텐츠 최강자",
+    "item2": "YouTube Shorts — 검색 연동 강점",
+    "item3": "TikTok — Z세대 핵심 플랫폼",
+    "item4": "LinkedIn — B2B 마케팅 필수",
+    "item5": "Threads — 텍스트 기반 신흥 채널"
+  },
+  {
+    "slide": 7,
+    "type": "content-split",
+    "headline": "전통 마케팅 vs <span class='highlight'>AI 마케팅</span>",
+    "left_title": "전통 마케팅",
+    "left_body": "수동 타겟팅\n긴 제작 기간\n제한된 A/B 테스트\n높은 인건비",
+    "right_title": "AI 마케팅",
+    "right_body": "자동 세그먼테이션\n실시간 콘텐츠 생성\n무한 변형 테스트\n비용 효율성",
+    "subtext": ""
+  },
+  {
+    "slide": 8,
+    "type": "content-highlight",
+    "headline": "가장 <span class='highlight'>중요한 한 가지</span>",
+    "emphasis": "<span class='highlight'>고객 경험</span>이\n모든 것을 결정한다",
+    "body": "기술이 아무리 발전해도 결국\n고객의 마음을 사로잡는 것은\n진정성 있는 경험입니다.",
+    "subtext": ""
+  },
+  {
+    "slide": 9,
+    "type": "content-quote",
+    "badge_number": "03",
+    "headline": "— Seth Godin",
+    "body": "\"마케팅은 더 이상\n만든 것을 파는 기술이 아니라,\n<span class='highlight'>팔릴 것을 만드는 기술</span>이다.\"",
+    "subtext": "마케팅의 본질"
+  },
+  {
+    "slide": 10,
+    "type": "content",
+    "badge_number": "04",
+    "headline": "<span class='highlight'>지금 시작</span>하세요",
+    "body": "변화는 이미 시작되었습니다.\n2025년, 당신의 마케팅 전략을\n<span class='highlight'>AI와 데이터</span>로 무장하세요.\n\n작은 실험부터 시작하면\n큰 변화를 만들 수 있습니다."
+  },
+  {
+    "slide": 11,
+    "type": "content-grid",
+    "headline": "2025 마케팅 <span class='highlight'>4대 핵심 전략</span>",
+    "grid1_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='6'/><circle cx='12' cy='12' r='2'/></svg>",
+    "grid1_title": "타겟 정밀화",
+    "grid1_desc": "AI 기반 고객 세그먼트",
+    "grid2_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='14' height='20' x='5' y='2' rx='2' ry='2'/><path d='M12 18h.01'/></svg>",
+    "grid2_title": "숏폼 콘텐츠",
+    "grid2_desc": "15초 이내 영상 제작",
+    "grid3_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 8V4H8'/><rect width='16' height='12' x='4' y='8' rx='2'/><path d='M2 14h2'/><path d='M20 14h2'/><path d='M15 13v2'/><path d='M9 13v2'/></svg>",
+    "grid3_title": "AI 자동화",
+    "grid3_desc": "콘텐츠 생성 자동화",
+    "grid4_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 3v18h18'/><path d='M18 17V9'/><path d='M13 17V5'/><path d='M8 17v-3'/></svg>",
+    "grid4_title": "데이터 분석",
+    "grid4_desc": "실시간 성과 측정"
+  },
+  {
+    "slide": 12,
+    "type": "content-bigdata",
+    "headline": "글로벌 AI 마케팅 <span class='highlight'>시장 규모</span>",
+    "bigdata_number": "48.8",
+    "bigdata_unit": "조원",
+    "body": "2025년 전 세계 AI 마케팅 시장은\n약 48.8조원 규모로 성장할 전망입니다.",
+    "subtext": "Source: Statista 2025"
+  },
+  {
+    "slide": 13,
+    "type": "cta",
+    "headline": "더 많은 <span class='highlight'>인사이트</span>가\n궁금하다면",
+    "cta_text": "팔로우하고 트렌드 받아보기",
+    "subtext": "매주 새로운 마케팅 인사이트",
+    "tag1": "#마케팅트렌드",
+    "tag2": "#AI마케팅",
+    "tag3": "#디지털전략"
+  }
+]

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(135deg, {{accent_color}}, #1a1a2e);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 72px 100px;
+  }
+
+  /* Decorative background shapes */
+  .bg-circle-1 {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    top: -180px;
+    right: -160px;
+    pointer-events: none;
+  }
+
+  .bg-circle-2 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    bottom: 100px;
+    left: -100px;
+    pointer-events: none;
+  }
+
+  .bg-square {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.04);
+    bottom: 200px;
+    right: 60px;
+    transform: rotate(35deg);
+    pointer-events: none;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .label-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-size: 56px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* Columns wrapper */
+  .columns-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    margin-top: 40px;
+  }
+
+  /* Frosted glass column */
+  .column {
+    flex: 1;
+    height: 520px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .column-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .column-divider {
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .column-body {
+    font-size: 21px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+  }
+
+  /* Center separator circle */
+  .center-separator {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 900;
+    color: #1a1a2e;
+    flex-shrink: 0;
+    margin: 0 -2px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Subtext below columns */
+  .subtext {
+    margin-top: 36px;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+  }
+
+  .account-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+  }
+
+  .slide-counter {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="bg-square"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label-tag">COMPARE</div>
+    <div class="headline">{{headline}}</div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="columns-wrapper">
+    <!-- Left column -->
+    <div class="column">
+      <div class="column-title">{{left_title}}</div>
+      <div class="column-divider"></div>
+      <div class="column-body">{{left_body}}</div>
+    </div>
+
+    <!-- Center VS circle -->
+    <div class="center-separator">VS</div>
+
+    <!-- Right column -->
+    <div class="column">
+      <div class="column-title">{{right_title}}</div>
+      <div class="column-divider"></div>
+      <div class="column-body">{{right_body}}</div>
+    </div>
+  </div>
+
+  <!-- Subtext -->
+  <div class="subtext">{{subtext}}</div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+</div>
+</body>
+</html>

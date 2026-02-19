@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Elegant — Category Badge + Large Text</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: #1A1A2E;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #1A1A2E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 100px 120px;
+    text-align: center;
+  }
+
+  /* Background grid texture */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Radial glow behind content */
+  .slide::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(212,175,55,0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Corner brackets */
+  .corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: {{accent_color}};
+    border-style: solid;
+    opacity: 0.6;
+    z-index: 2;
+  }
+  .corner-tl { top: 36px; left: 36px; border-width: 2px 0 0 2px; }
+  .corner-tr { top: 36px; right: 36px; border-width: 2px 2px 0 0; }
+  .corner-bl { bottom: 36px; left: 36px; border-width: 0 0 2px 2px; }
+  .corner-br { bottom: 36px; right: 36px; border-width: 0 2px 2px 0; }
+
+  /* ── CONTENT ── */
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  /* Badge pill */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 32px;
+    border: 1px solid {{accent_color}};
+    border-radius: 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: {{accent_color}};
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  /* Thin gold line separator between badge and headline */
+  .badge-separator {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, {{accent_color}}, transparent);
+    opacity: 0.45;
+    margin-bottom: 36px;
+  }
+
+  .headline {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #F5F0E8;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 44px;
+    word-break: keep-all;
+  }
+
+  /* Horizontal ornament line below headline */
+  .headline-ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 44px;
+    width: 320px;
+  }
+
+  .ornament-line {
+    flex: 1;
+    height: 1px;
+    background: {{accent_color}};
+    opacity: 0.4;
+  }
+
+  .ornament-diamond {
+    font-size: 10px;
+    color: {{accent_color}};
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .body-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #A8A8BC;
+    line-height: 1.7;
+    margin: 0 0 60px;
+    max-width: 760px;
+    word-break: keep-all;
+  }
+
+  /* Subtext (dates/info) */
+  .subtext {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.15em;
+    opacity: 0.75;
+  }
+
+  /* ── BOTTOM BAR ── */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index: 10;
+  }
+
+  .bottom-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 60px;
+    right: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, {{accent_color}}, transparent);
+    opacity: 0.5;
+  }
+
+  .account-name {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.08em;
+  }
+
+  .slide-counter {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: {{accent_color}};
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- Corner brackets -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="badge">{{badge_text}}</div>
+    <div class="badge-separator"></div>
+    <h1 class="headline">{{headline}}</h1>
+    <div class="headline-ornament">
+      <div class="ornament-line"></div>
+      <span class="ornament-diamond">&#9670;</span>
+      <div class="ornament-line"></div>
+    </div>
+    <p class="body-text">{{body}}</p>
+    <span class="subtext">{{subtext}}</span>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <span class="account-name">@{{account_name}}</span>
+    <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+  </div>
+
+</div>
+</body>
+</html>

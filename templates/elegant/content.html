@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Elegant Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background-color: #1A1A2E;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background-color: #1A1A2E;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 100px 85px 80px 85px;
+    }
+
+    /* Subtle top accent line */
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, {{accent_color}}, transparent);
+    }
+
+    /* Corner marks */
+    .corner-mark {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+    }
+    .corner-mark-tl {
+      top: 48px;
+      left: 48px;
+      border-top: 1px solid rgba(212, 175, 55, 0.4);
+      border-left: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .corner-mark-tr {
+      top: 48px;
+      right: 48px;
+      border-top: 1px solid rgba(212, 175, 55, 0.4);
+      border-right: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+    }
+
+    /* Slide label */
+    .slide-label {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: {{accent_color}};
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .headline {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 1.4;
+      color: #F5F0E8;
+      letter-spacing: -0.01em;
+      margin: 0 0 0 0;
+      white-space: pre-line;
+    }
+
+    /* Thin separator line */
+    .separator {
+      width: 60px;
+      height: 1px;
+      background-color: {{accent_color}};
+      margin: 44px 0;
+    }
+
+    .body-text {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 1.85;
+      color: #E0E0E0;
+      margin: 0;
+      white-space: pre-line;
+      letter-spacing: 0.01em;
+    }
+
+    /* Subtext if needed */
+    .subtext {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(245, 240, 232, 0.45);
+      margin-top: 40px;
+      white-space: pre-line;
+      letter-spacing: 0.03em;
+    }
+
+    /* Bottom */
+    .bottom-section {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 85px;
+    }
+
+    .bottom-line {
+      height: 1px;
+      background-color: rgba(212, 175, 55, 0.2);
+      margin-bottom: 0;
+    }
+
+    .bottom-bar {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .account-name {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: rgba(212, 175, 55, 0.7);
+      letter-spacing: 0.06em;
+    }
+
+    .slide-counter {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: {{accent_color}};
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Top accent -->
+    <div class="top-accent"></div>
+
+    <!-- Corner marks -->
+    <div class="corner-mark corner-mark-tl"></div>
+    <div class="corner-mark corner-mark-tr"></div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <div class="slide-label">{{slide_number}} &mdash; {{total_slides}}</div>
+      <h2 class="headline">{{headline}}</h2>
+      <div class="separator"></div>
+      <p class="body-text">{{body}}</p>
+      <p class="subtext">{{subtext}}</p>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <div class="bottom-line"></div>
+      <div class="bottom-bar">
+        <span class="account-name">@{{account_name}}</span>
+        <span class="slide-counter">{{slide_number}} / {{total_slides}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

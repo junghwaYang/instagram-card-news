@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Content List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 72px 100px;
+      position: relative;
+    }
+
+    /* Accent bar at top */
+    .accent-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: {{accent_color}};
+    }
+
+    /* Header area */
+    .header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    .headline {
+      font-size: 56px;
+      font-weight: 800;
+      color: #1A1A1A;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 5px;
+      background: {{accent_color}};
+      border-radius: 3px;
+      margin-top: 32px;
+      margin-bottom: 48px;
+    }
+
+    /* Numbered list */
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .list-item:first-child {
+      border-top: 1px solid #F0F0F0;
+    }
+
+    /* Number circle */
+    .num-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    /* Item text */
+    .item-text {
+      font-size: 30px;
+      color: #1A1A1A;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 48px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-account {
+      font-size: 22px;
+      color: #9CA3AF;
+      font-weight: 500;
+    }
+
+    .footer-slide {
+      font-size: 22px;
+      color: #9CA3AF;
+      font-weight: 500;
+    }
+
+    /* Subtle right-side decoration */
+    .deco-dot {
+      position: absolute;
+      top: 80px;
+      right: 72px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      opacity: 0.4;
+    }
+
+    .deco-dot::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      opacity: 0.25;
+    }
+
+    .deco-dot::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: {{accent_color}};
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Accent top bar -->
+    <div class="accent-top"></div>
+
+    <!-- Decoration dots -->
+    <div class="deco-dot"></div>
+
+    <!-- Header -->
+    <div class="header">
+      <h1 class="headline">{{headline}}</h1>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Numbered list -->
+    <ul class="list">
+      <li class="list-item">
+        <div class="num-circle">1</div>
+        <span class="item-text">{{item1}}</span>
+      </li>
+      <li class="list-item">
+        <div class="num-circle">2</div>
+        <span class="item-text">{{item2}}</span>
+      </li>
+      <li class="list-item">
+        <div class="num-circle">3</div>
+        <span class="item-text">{{item3}}</span>
+      </li>
+      <li class="list-item">
+        <div class="num-circle">4</div>
+        <span class="item-text">{{item4}}</span>
+      </li>
+      <li class="list-item">
+        <div class="num-circle">5</div>
+        <span class="item-text">{{item5}}</span>
+      </li>
+    </ul>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-account">@{{account_name}}</span>
+      <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+    </div>
+  </div>
+</body>
+</html>

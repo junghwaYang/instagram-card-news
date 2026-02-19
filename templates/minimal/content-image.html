@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Content Image</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+      z-index: 10;
+    }
+    /* Image area — top 55% */
+    .image-area {
+      width: 1080px;
+      height: 743px;
+      flex-shrink: 0;
+      background-image: url('{{image_url}}');
+      background-size: cover;
+      background-position: center;
+      background-color: #EAECEF;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .camera-icon {
+      opacity: 0.3;
+    }
+    .placeholder-label {
+      font-size: 22px;
+      font-weight: 300;
+      color: #AAAAAA;
+      letter-spacing: 0.05em;
+    }
+    /* Bottom gradient overlay on image */
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+    }
+    /* Text area — bottom 45% */
+    .text-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 80px 0 80px;
+    }
+    .accent-tag {
+      display: inline-block;
+      width: 40px;
+      height: 3px;
+      background: {{accent_color}};
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .headline {
+      font-size: 56px;
+      font-weight: 900;
+      color: #1A1A1A;
+      line-height: 1.25;
+      margin: 0 0 28px 0;
+      word-break: keep-all;
+    }
+    .body-text {
+      font-size: 28px;
+      font-weight: 400;
+      color: #555555;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    .footer {
+      padding: 0 80px 52px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .account-name {
+      font-size: 24px;
+      font-weight: 500;
+      color: #BBBBBB;
+      letter-spacing: 0.05em;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .bottom-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="image-area">
+      <div class="image-placeholder">
+        <svg class="camera-icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 14L24 22H10C7.8 22 6 23.8 6 26V62C6 64.2 7.8 66 10 66H70C72.2 66 74 64.2 74 62V26C74 23.8 72.2 22 70 22H56L50 14H30Z" stroke="#AAAAAA" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="40" cy="44" r="14" stroke="#AAAAAA" stroke-width="3"/>
+          <circle cx="40" cy="44" r="8" fill="#CCCCCC"/>
+        </svg>
+        <span class="placeholder-label">이미지 영역</span>
+      </div>
+      <div class="image-overlay"></div>
+    </div>
+    <div class="text-area">
+      <div class="accent-tag"></div>
+      <h2 class="headline">{{headline}}</h2>
+      <p class="body-text">{{body}}</p>
+    </div>
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+    <div class="bottom-accent"></div>
+  </div>
+</body>
+</html>

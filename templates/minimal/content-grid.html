@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Content Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 72px;
+      position: relative;
+    }
+    .top-accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+    .left-accent {
+      position: absolute;
+      left: 0;
+      top: 200px;
+      bottom: 200px;
+      width: 4px;
+      background: {{accent_color}};
+      opacity: 0.12;
+    }
+    .right-accent {
+      position: absolute;
+      right: 0;
+      top: 200px;
+      bottom: 200px;
+      width: 4px;
+      background: {{accent_color}};
+      opacity: 0.12;
+    }
+    .top-bar {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 52px 0 0 0;
+      flex-shrink: 0;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+    .headline {
+      font-size: 46px;
+      font-weight: 700;
+      color: #1A1A1A;
+      text-align: center;
+      margin: 44px 0 48px 0;
+      line-height: 1.3;
+      word-break: keep-all;
+      flex-shrink: 0;
+    }
+    .headline-underline {
+      width: 60px;
+      height: 3px;
+      background: {{accent_color}};
+      margin: -32px auto 48px auto;
+      flex-shrink: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      flex: 1;
+      padding-bottom: 0;
+    }
+    .grid-card {
+      background: #FAFAFA;
+      border: 1.5px solid {{accent_color}};
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: {{accent_color}};
+      opacity: 0.35;
+    }
+    .card-icon {
+      font-size: 58px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+      word-break: keep-all;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 20px;
+      font-weight: 300;
+      color: #777777;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    .footer {
+      width: 100%;
+      padding: 20px 0 44px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .account-name {
+      font-size: 22px;
+      font-weight: 500;
+      color: #BBBBBB;
+      letter-spacing: 0.05em;
+    }
+    .slide-counter {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-counter-accent {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent-bar"></div>
+    <div class="left-accent"></div>
+    <div class="right-accent"></div>
+
+    <div class="top-bar">
+      <span class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+
+    <h2 class="headline">{{headline}}</h2>
+    <div class="headline-underline"></div>
+
+    <div class="grid">
+      <div class="grid-card">
+        <div class="card-icon">{{grid1_icon}}</div>
+        <div class="card-title">{{grid1_title}}</div>
+        <div class="card-desc">{{grid1_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid2_icon}}</div>
+        <div class="card-title">{{grid2_title}}</div>
+        <div class="card-desc">{{grid2_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid3_icon}}</div>
+        <div class="card-title">{{grid3_title}}</div>
+        <div class="card-desc">{{grid3_desc}}</div>
+      </div>
+      <div class="grid-card">
+        <div class="card-icon">{{grid4_icon}}</div>
+        <div class="card-title">{{grid4_title}}</div>
+        <div class="card-desc">{{grid4_desc}}</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-counter">
+        <span class="slide-counter-accent">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+  </div>
+</body>
+</html>

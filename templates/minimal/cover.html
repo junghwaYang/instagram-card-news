@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>Minimal Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #FFFFFF;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .card {
+      width: 1080px;
+      height: 1350px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 80px 60px 80px;
+      position: relative;
+    }
+    .top-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      width: 100%;
+      text-align: center;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 22px;
+      font-weight: 500;
+      color: {{accent_color}};
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .headline {
+      font-size: 80px;
+      font-weight: 900;
+      color: #1A1A1A;
+      line-height: 1.2;
+      margin: 0 0 32px 0;
+      word-break: keep-all;
+    }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: {{accent_color}};
+      margin: 0 auto 36px auto;
+    }
+    .subtext {
+      font-size: 30px;
+      font-weight: 300;
+      color: #666666;
+      line-height: 1.6;
+      max-width: 800px;
+      word-break: keep-all;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 80px 50px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .account-name {
+      font-size: 24px;
+      font-weight: 500;
+      color: #999999;
+      letter-spacing: 0.05em;
+    }
+    .slide-indicator {
+      font-size: 22px;
+      font-weight: 300;
+      color: #CCCCCC;
+      letter-spacing: 0.05em;
+    }
+    .slide-current {
+      color: {{accent_color}};
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-accent"></div>
+    <div class="content-wrapper">
+      <span class="tag">Card News</span>
+      <h1 class="headline">{{headline}}</h1>
+      <div class="divider"></div>
+      <p class="subtext">{{subtext}}</p>
+    </div>
+    <div class="footer">
+      <span class="account-name">@{{account_name}}</span>
+      <span class="slide-indicator">
+        <span class="slide-current">{{slide_number}}</span> / {{total_slides}}
+      </span>
+    </div>
+  </div>
+</body>
+</html>

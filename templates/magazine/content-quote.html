@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magazine - Content Quote</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #F5F5F5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Chapter Badge */
+    .badge {
+      display: inline-block;
+      background-color: {{accent_color}};
+      color: #FFFFFF;
+      border-radius: 50px;
+      padding: 10px 28px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+
+    /* Headline */
+    .headline {
+      font-size: 56px;
+      font-weight: 800;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: 40px;
+      word-break: keep-all;
+    }
+
+    /* Dashed Divider */
+    .divider {
+      width: 80%;
+      border: none;
+      border-top: 2px dashed #D1D5DB;
+      margin: 0 auto 40px;
+    }
+
+    /* Quote Icon */
+    .quote-icon {
+      font-size: 64px;
+      color: {{accent_color}};
+      text-align: center;
+      line-height: 1;
+      margin-bottom: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    /* Quote Body */
+    .body-text {
+      font-size: 32px;
+      font-weight: 500;
+      color: #1A1A1A;
+      text-align: center;
+      line-height: 1.7;
+      word-break: keep-all;
+      margin-bottom: 32px;
+      max-width: 880px;
+    }
+
+    /* Source Attribution */
+    .subtext {
+      font-size: 22px;
+      color: #9CA3AF;
+      text-align: center;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px 40px;
+    }
+
+    .footer-account {
+      font-size: 20px;
+      color: #9CA3AF;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-slide {
+      font-size: 20px;
+      color: #9CA3AF;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Chapter Badge -->
+    <div class="badge">CHAPTER {{badge_number}}</div>
+
+    <!-- Headline -->
+    <h1 class="headline">{{headline}}</h1>
+
+    <!-- Dashed Divider -->
+    <hr class="divider" />
+
+    <!-- Quote Icon -->
+    <div class="quote-icon">&#10077;</div>
+
+    <!-- Quote Body -->
+    <p class="body-text">{{body}}</p>
+
+    <!-- Source Attribution -->
+    <p class="subtext">{{subtext}}</p>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-account">@{{account_name}}</span>
+      <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+    </div>
+
+  </div>
+</body>
+</html>
