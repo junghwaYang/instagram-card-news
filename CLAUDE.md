@@ -1,11 +1,11 @@
 # Instagram 카드뉴스 생성 프로젝트
 
-> **v5.2** — 14종 슬라이드 타입 + 8종 템플릿 스타일 + 팀 토론 파이프라인
+> **v5.3** — 14종 슬라이드 타입 + 8종 템플릿 스타일 + Team 모드 실시간 토론 파이프라인
 
 ## 프로젝트 개요
 
 이 프로젝트는 주어진 주제에 대해 Instagram 카드뉴스(캐러셀 포스트)를 자동으로 생성합니다.
-Claude Code가 오케스트레이터 역할을 하며, 리서치 → **리서치 검증 (팀 토론)** → 카피라이팅 → **카피 토론 (팀 토론)** → 렌더링 → 검토 파이프라인을 실행합니다.
+Claude Code가 오케스트레이터 역할을 하며, 리서치 → **리서치 검증 (팀 토론)** → **카피 토론 (Team 모드 실시간 토론)** → 렌더링 → 검토 파이프라인을 실행합니다.
 
 **입력**: 주제, 톤, 템플릿 스타일, 슬라이드 수, 악센트 색상
 **출력**: `output/` 디렉토리에 PNG 이미지 파일들 (1080×1350px, Instagram 세로형)
@@ -107,7 +107,7 @@ Claude Code가 오케스트레이터 역할을 하며, 리서치 → **리서치
   {"slide": 9, "type": "content-stat", "headline": "...", "emphasis": "85%", "body": "..."},
   {"slide": 10, "type": "content-quote", "headline": "— 출처", "body": "인용문..."},
   {"slide": 11, "type": "cta", "headline": "...", "cta_text": "팔로우하기"},
-  {"slide": 12, "type": "content-grid", "headline": "4대 핵심 전략", "grid1_icon": "🎯", "grid1_title": "타겟팅", "grid1_desc": "설명", "grid2_icon": "📱", "grid2_title": "콘텐츠", "grid2_desc": "설명", "grid3_icon": "🤖", "grid3_title": "자동화", "grid3_desc": "설명", "grid4_icon": "📊", "grid4_title": "분석", "grid4_desc": "설명"},
+  {"slide": 12, "type": "content-grid", "headline": "4대 핵심 전략", "grid1_icon": "search", "grid1_title": "타겟팅", "grid1_desc": "설명", "grid2_icon": "code", "grid2_title": "콘텐츠", "grid2_desc": "설명", "grid3_icon": "robot", "grid3_title": "자동화", "grid3_desc": "설명", "grid4_icon": "chart", "grid4_title": "분석", "grid4_desc": "설명"},
   {"slide": 13, "type": "content-bigdata", "headline": "시장 규모", "bigdata_number": "48.8", "bigdata_unit": "조원", "body": "설명 텍스트", "subtext": "출처"},
   {"slide": 14, "type": "content-fullimage", "headline": "풀이미지 타이틀", "badge_text": "핵심 인사이트", "body": "첫 번째 섹션 설명", "badge2_text": "주의할 점", "body2": "두 번째 섹션 설명", "image_url": "https://..."}
 ]
@@ -125,48 +125,57 @@ Claude Code가 오케스트레이터 역할을 하며, 리서치 → **리서치
 - **비교/대조가 필요하면** `content-split` 타입 활용
 - **핵심 메시지 강조는** `content-highlight` 타입 활용
 - **이미지가 필요한 슬라이드는** `content-image` 타입 (image_url은 비워두면 플레이스홀더 표시)
-- **2x2 그리드 정보 정리는** `content-grid` 타입 활용 (4개 항목, 이모지 아이콘)
+- **2x2 그리드 정보 정리는** `content-grid` 타입 활용 (4개 항목, SVG 아이콘 키 사용)
 - **대형 숫자/금액/규모 강조는** `content-bigdata` 타입 활용 (거대 숫자 + 단위)
 - **풀 배경 이미지 + 텍스트 오버레이는** `content-fullimage` 타입 활용 (두 개의 배지 섹션, 다크 오버레이)
 - **마지막 슬라이드 (cta)**: 명확한 행동 유도 (저장, 팔로우, 공유 등)
 - **문장 길이**: 짧고 임팩트 있게, 한 줄 15자 이내 권장
 - **어조**: 요청된 톤(professional / casual / energetic)에 맞게 작성
+- **이모지 사용 금지**: slides.json의 모든 필드에서 이모지(emoji) 절대 사용하지 않는다. 아이콘이 필요한 경우 템플릿의 SVG 아이콘 키(예: robot, code, chart 등)를 사용할 것.
 
 ---
 
-### Step 3.5: 카피 토론 (팀 토론)
+### Step 3.5: 카피 토론 (Team 모드 실시간 토론)
 
-카피라이팅 결과물의 후킹력과 품질을 팀 에이전트가 토론하여 검증합니다.
+카피 작가와 후킹 전문가가 **Team 모드**에서 실시간 토론하며 slides.json을 완성합니다.
 
-**방식**: 2개의 Task 에이전트를 **병렬**로 실행한 뒤, 오케스트레이터가 종합
+**방식**: `TeamCreate` → `TaskCreate` → `Task(team_name)` 스폰 → 에이전트 간 `SendMessage` 토론 → 합의 도달 → `workspace/slides.json` 최종 확정
 
 #### 에이전트 구성
 
-| 역할 | 에이전트 | 모델 | 임무 |
-|---|---|---|---|
-| 후킹 전문가 | general-purpose | sonnet | 커버 헤드라인의 스크롤 스톱 파워, 호기심 유발 강도, 클릭 유도력 평가 |
-| 카피 에디터 | general-purpose | sonnet | 문장 완성도, 톤 일관성, 글자수 적정성, 슬라이드 간 흐름 평가 |
+| 역할 | 이름 | 에이전트 | 모델 | 임무 |
+|---|---|---|---|---|
+| 카피 작가 | `copywriter` | general-purpose | sonnet | research.md 기반 slides.json 초안 작성, 후킹 전문가 피드백 반영하여 수정 |
+| 후킹 전문가 | `hook-expert` | general-purpose | sonnet | 커버 헤드라인 스크롤 스톱 파워, 호기심 유발 강도, CTA 클릭 유도력 평가 및 구체적 대안 제시 |
 
 #### 실행 흐름
 
-1. `workspace/slides.json`을 두 에이전트에게 동시에 전달
-2. **후킹 전문가** 평가 기준:
-   - 커버 헤드라인: "이걸 왜 봐야 하지?"에 3초 안에 답하는가
-   - 각 슬라이드: 다음 장을 넘기고 싶은 호기심을 유발하는가
-   - CTA: 구체적이고 즉시 행동 가능한 문구인가
-   - 전체 후킹 점수: 1~10점 (7점 미만이면 수정 요청)
-3. **카피 에디터** 평가 기준:
-   - 한 줄 15자 이내 준수 여부
-   - 톤 일관성 (professional/casual/energetic)
-   - 슬라이드 간 논리적 흐름과 스토리라인
-   - 중복 표현이나 불필요한 문장 식별
-   - 슬라이드 타입 선택의 적절성
-4. 오케스트레이터가 두 에이전트의 피드백을 종합:
-   - 후킹 점수 7점 미만 → Step 3으로 돌아가 구체적 피드백과 함께 재작성
-   - 카피 에디터 지적사항 → 해당 슬라이드만 수정
-   - 양쪽 모두 통과 → Step 4로 진행
+1. 오케스트레이터가 `TeamCreate(team_name="copy-debate")`로 팀 생성
+2. `TaskCreate`로 두 에이전트의 작업 정의:
+   - `copywriter` 태스크: research.md + 톤 + 슬라이드 수를 기반으로 slides.json 초안 작성
+   - `hook-expert` 태스크: copywriter의 초안을 평가하고 피드백/대안 제시
+3. `Task(team_name="copy-debate", name="copywriter")` + `Task(team_name="copy-debate", name="hook-expert")` 동시 스폰
+4. **라운드 1**: 카피 작가가 research.md 기반으로 slides.json 초안 작성 → `SendMessage`로 후킹 전문가에게 전달
+5. **라운드 1 평가**: 후킹 전문가가 초안 평가 → 후킹 점수 (1~10점) + 구체적 피드백/대안을 `SendMessage`로 카피 작가에게 전달
+   - 평가 기준:
+     - 커버 헤드라인: "이걸 왜 봐야 하지?"에 3초 안에 답하는가
+     - 각 슬라이드: 다음 장을 넘기고 싶은 호기심을 유발하는가
+     - CTA: 구체적이고 즉시 행동 가능한 문구인가
+     - 문장 길이: 한 줄 15자 이내 준수 여부
+     - 톤 일관성, 슬라이드 간 흐름, 슬라이드 타입 적절성
+6. **라운드 2~3** (필요 시): 카피 작가가 피드백 반영하여 수정 → 다시 후킹 전문가에게 전달 → 재평가
+7. **합의 도달**: 후킹 점수 7점 이상 달성 시 카피 작가가 `workspace/slides.json` 최종 저장
+8. 오케스트레이터가 `SendMessage(type="shutdown_request")`로 팀 종료 → Step 4로 진행
 
-**통과 기준**: 후킹 점수 7점 이상 + 카피 에디터의 주요 지적사항 0건
+#### 통과 기준
+
+- 후킹 점수 **7점 이상**
+- 카피 작가와 후킹 전문가 **양측 합의**
+- 최대 **3라운드** 내 합의 실패 시 마지막 버전 채택 후 진행
+
+#### Step 3 변경사항
+
+> Team 모드 도입으로 **Step 3 (카피라이팅)은 별도 실행하지 않습니다**. Step 3.5의 카피 작가(`copywriter`)가 research.md를 직접 읽고 slides.json 초안을 작성하므로, 기존 Step 3의 카피라이팅 역할이 Step 3.5에 통합됩니다. 단, slides.json 포맷과 카피라이팅 가이드라인은 그대로 적용됩니다.
 
 ---
 
@@ -202,7 +211,7 @@ node scripts/render.js \
 - CTA 명확성: 마지막 슬라이드의 행동 유도가 구체적인지
 - 주제 일관성: 전체 카드뉴스가 주제에 집중되어 있는지
 
-**문제 발견 시**: Step 3 (카피라이팅)으로 돌아가 구체적인 피드백과 함께 수정 요청 (수정 후 Step 3.5 카피 토론도 재실행)
+**문제 발견 시**: Step 3.5 (카피 토론)으로 돌아가 구체적인 피드백과 함께 Team 모드 재실행
 **이상 없음**: 사용자에게 완료 보고 및 출력 파일 경로 안내
 
 ---

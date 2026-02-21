@@ -95,7 +95,8 @@ function applyPlaceholders(html, slide, opts, index, total) {
 async function render(opts = {}) {
   const slidesPath = opts.slidesPath || path.join(process.cwd(), config.workspace_dir, 'slides.json');
   const style = opts.style || config.defaults.template;
-  const outputDir = opts.outputDir || path.join(process.cwd(), config.output_dir);
+  const baseOutputDir = opts.outputDir || path.join(process.cwd(), config.output_dir);
+  const outputDir = opts.name ? path.join(baseOutputDir, opts.name) : baseOutputDir;
   const accent = opts.accent || config.defaults.accent_color;
   const account = opts.account || config.defaults.account_name;
 
@@ -187,6 +188,9 @@ function parseArgs(argv) {
         break;
       case '--account':
         opts.account = args[++i];
+        break;
+      case '--name':
+        opts.name = args[++i];
         break;
       default:
         console.warn(`Unknown argument: ${args[i]}`);

@@ -65,39 +65,83 @@
       font-weight: 500;
       color: #8B95A5;
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
       word-break: keep-all;
     }
 
-    /* Donut chart ring */
-    .donut-wrapper {
+    .headline .accent {
+      color: {{accent_color}};
+    }
+
+    /* Bar chart */
+    .bar-chart {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-bottom: 56px;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .bar-label {
+      font-size: 36px;
+      font-weight: 700;
+      color: #5A6677;
+      min-width: 120px;
+      text-align: right;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 80px;
+      background: #D5DBE5;
+      border-radius: 12px;
+      overflow: hidden;
       position: relative;
-      width: 380px;
-      height: 380px;
-      margin-bottom: 40px;
     }
 
-    .donut-ring {
-      width: 380px;
-      height: 380px;
-      border-radius: 50%;
-      background: conic-gradient(
-        {{accent_color}} 0deg 281deg,
-        #D5DBE5 281deg 360deg
-      );
+    .bar-fill {
+      height: 100%;
+      border-radius: 12px;
+      transition: width 0.5s ease;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      padding-right: 24px;
+      min-width: 80px;
     }
 
-    .donut-inner {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: #EDF0F5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .bar-fill-muted {
+      background: #A8B3C2;
+    }
+
+    .bar-fill-accent {
+      background: {{accent_color}};
+    }
+
+    .bar-value {
+      font-size: 42px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+    }
+
+    .bar-value-outside {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 42px;
+      font-weight: 900;
+      color: #A8B3C2;
+      letter-spacing: -0.03em;
     }
 
     .emphasis {
@@ -107,6 +151,7 @@
       text-align: center;
       line-height: 1;
       letter-spacing: -0.05em;
+      margin-bottom: 16px;
     }
 
     .divider {
@@ -134,10 +179,21 @@
   <div class="content">
     <p class="headline">{{headline}}</p>
 
-    <div class="donut-wrapper">
-      <div class="donut-ring">
-        <div class="donut-inner">
-          <div class="emphasis">{{emphasis}}</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label" id="label1"></div>
+        <div class="bar-track" style="position: relative;">
+          <div class="bar-fill bar-fill-muted" id="bar1">
+            <span class="bar-value" id="val1"></span>
+          </div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label" id="label2"></div>
+        <div class="bar-track">
+          <div class="bar-fill bar-fill-accent" id="bar2">
+            <span class="bar-value" id="val2"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -145,5 +201,39 @@
     <div class="divider"></div>
     <p class="body-text">{{body}}</p>
   </div>
+
+  <script>
+    // Parse emphasis "5% → 40%" into bar chart data
+    const emphasis = `{{emphasis}}`;
+    const parts = emphasis.split('→').map(s => s.trim());
+    const val1Str = parts[0] || '';
+    const val2Str = parts[1] || parts[0] || '';
+    const num1 = parseFloat(val1Str);
+    const num2 = parseFloat(val2Str);
+    const maxVal = Math.max(num1, num2);
+
+    // Set bar widths (proportional to max value)
+    document.getElementById('bar1').style.width = Math.max((num1 / maxVal) * 100, 15) + '%';
+    document.getElementById('bar2').style.width = (num2 / maxVal) * 100 + '%';
+
+    // Set bar value labels
+    document.getElementById('val1').textContent = val1Str;
+    document.getElementById('val2').textContent = val2Str;
+
+    // Parse body to extract year labels
+    const bodyText = `{{body}}`;
+    const yearMatch1 = bodyText.match(/(\d{4})년/);
+    const yearMatch2 = bodyText.match(/(\d{4})년.*?(\d{4})년/);
+    if (yearMatch2) {
+      document.getElementById('label1').textContent = yearMatch2[1];
+      document.getElementById('label2').textContent = yearMatch2[2];
+    } else if (yearMatch1) {
+      document.getElementById('label1').textContent = 'Before';
+      document.getElementById('label2').textContent = yearMatch1[1];
+    } else {
+      document.getElementById('label1').textContent = 'Before';
+      document.getElementById('label2').textContent = 'After';
+    }
+  </script>
 </body>
 </html>
