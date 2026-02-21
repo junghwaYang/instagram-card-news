@@ -1,0 +1,10 @@
+{
+  "name": "card-news-setup",
+  "version": "1.0.0",
+  "description": "Instagram card news generator — Claude Code skill installer",
+  "bin": {
+    "card-news-setup": "./bin/install.js"
+  },
+  "keywords": ["claude-code", "skill", "instagram", "card-news", "carousel"],
+  "license": "MIT"
+}
