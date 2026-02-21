@@ -569,10 +569,10 @@ CLAUDE.md에는 다음 내용을 포함합니다:
 2. **Step 1 요청 파싱**: topic, tone, slide_count, accent_color, account_name 추출
 3. **Step 2 리서치**: general-purpose 에이전트로 웹 검색 → `workspace/research.md` 작성 (핵심 포인트 5~10개, 통계, 인용구, 트렌드)
 4. **Step 2.5 리서치 검증**: 팩트체커 + 보완 리서처 2개 에이전트 **병렬** 실행, 교차 검증
-5. **Step 3 카피라이팅**: general-purpose 에이전트로 `workspace/slides.json` 생성 (13종 슬라이드 타입 활용)
-6. **Step 3.5 카피 토론**: 후킹 전문가(스크롤 스톱 파워 1~10점) + 카피 에디터(문장/흐름/톤) **병렬** 실행, 7점 미만이면 재작성
+5. **Step 3 카피라이팅**: Step 3.5에 통합되어 별도 실행하지 않음 (slides.json 포맷과 카피라이팅 가이드라인만 참조 정보로 포함)
+6. **Step 3.5 카피 토론 (Team 모드 실시간 토론)**: `TeamCreate(team_name="copy-debate")` → 카피 작가(`copywriter`) + 후킹 전문가(`hook-expert`) 스폰 → `SendMessage`로 실시간 토론 → 후킹 점수 7점 이상 + 양측 합의 시 `workspace/slides.json` 최종 확정 (최대 3라운드, 합의 실패 시 마지막 버전 채택)
 7. **Step 4 렌더링**: `node scripts/render.js` 실행
-8. **Step 5 검토**: general-purpose 에이전트로 PNG 시각 검토
+8. **Step 5 검토**: general-purpose 에이전트로 PNG 시각 검토, 문제 발견 시 Step 3.5 Team 모드 재실행
 
 그리고 다음 참조 정보를 포함합니다:
 - slides.json 포맷 (13개 타입별 예시)
@@ -625,4 +625,4 @@ git init && git add -A && git commit -m "Initial commit: Instagram card news gen
 >
 > **출력 위치**: `output/` 디렉토리 (1080×1350px PNG)
 >
-> **파이프라인**: 리서치 → 팩트체크 → 카피 → 후킹 검증 → 렌더링 → 시각 검토
+> **파이프라인**: 리서치 → 팩트체크 → 카피 토론 (Team 모드) → 렌더링 → 시각 검토
