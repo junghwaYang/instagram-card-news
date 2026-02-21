@@ -2,68 +2,74 @@
   {
     "slide": 1,
     "type": "cover",
-    "headline_label": "AI 트렌드",
-    "headline": "2026년,\nAI가 바꾸는\n모든 것",
-    "subtext": "에이전트·시장·일자리까지\n지금 알아야 할 핵심 변화",
-    "tag1": "#AI트렌드2026",
-    "tag2": "#에이전틱AI",
-    "tag3": "#생성형AI"
+    "headline": "당신 옆자리,<br>AI로 <span class='bar-highlight'>대체됐습니다</span>",
+    "subtext": "살아남는 사람들은 이미 이걸 알고 있다"
   },
   {
     "slide": 2,
-    "type": "content-stat",
-    "headline": "기업 앱\nAI 에이전트 탑재율",
-    "emphasis": "40%",
-    "body": "2025년 5% 미만에서\n2026년 말 40%로 급등\n— Gartner 전망"
+    "type": "content-bigdata",
+    "headline": "AI 시장, <span class='accent'>폭발적 성장</span>",
+    "bigdata_number": "4,340",
+    "bigdata_unit": "억 달러",
+    "body": "2026년 글로벌 AI 시장 규모\n2030년에는 1.81조 달러까지 성장 전망",
+    "subtext": "출처: Fortune Business Insights / Mordor Intelligence"
   },
   {
     "slide": 3,
-    "type": "content-bigdata",
-    "headline": "글로벌 AI 시장 규모",
-    "bigdata_number": "4,340",
-    "bigdata_unit": "억 달러",
-    "body": "2026년 최대 4,340억 달러 전망\nCAGR 35.9%로 폭발적 성장",
-    "subtext": "출처: Mordor Intelligence / Fortune Business Insights"
+    "type": "content-stat",
+    "headline": "<span class='accent'>40%</span> — AI 에이전트 탑재율",
+    "emphasis": "5% → 40%",
+    "body": "2025년 5%에 불과하던 AI 에이전트 탑재율\n2026년 말 40%로 급등 전망 (Gartner)"
   },
   {
     "slide": 4,
     "type": "content-grid",
-    "headline": "2026 AI 4대 핵심 트렌드",
-    "grid1_icon": "🤖",
+    "headline": "2026년 <span class='accent'>4대 AI 메가트렌드</span>",
+    "grid1_icon": "robot",
     "grid1_title": "에이전틱 AI",
-    "grid1_desc": "자율 멀티스텝\n작업 실행",
-    "grid2_icon": "📱",
-    "grid2_title": "엣지 AI",
-    "grid2_desc": "기기 직접 실행\n비용 98% 절감",
-    "grid3_icon": "🌐",
-    "grid3_title": "멀티모달",
-    "grid3_desc": "텍스트·이미지·영상\n동시 처리 기본화",
-    "grid4_icon": "🔓",
-    "grid4_title": "오픈소스",
-    "grid4_desc": "DeepSeek 이후\nAI 민주화 가속"
+    "grid1_desc": "스스로 계획·실행하는 자율 협업자",
+    "grid2_icon": "chip",
+    "grid2_title": "엣지 AI / SLM",
+    "grid2_desc": "기기 내 실행, 비용 98% 절감",
+    "grid3_icon": "eye",
+    "grid3_title": "멀티모달 AI",
+    "grid3_desc": "텍스트·이미지·음성 동시 처리 기본화",
+    "grid4_icon": "globe",
+    "grid4_title": "오픈소스 AI",
+    "grid4_desc": "DeepSeek 충격, 기술 민주화 가속"
   },
   {
     "slide": 5,
-    "type": "content-highlight",
-    "headline": "도입률 71%,\n성과 실감은 13%",
-    "emphasis": "2026년은 증명의 해",
-    "body": "생성형 AI를 쓰는 기업은 급증했지만\n전사적 임팩트를 체감하는 경영진은\n고작 13%에 불과하다",
-    "subtext": "출처: Deloitte State of AI in Enterprise 2026"
+    "type": "content-split",
+    "headline": "AI — <span class='accent'>위기인가, 기회인가</span>",
+    "left_title": "위기",
+    "left_body": "최대 3억 개 일자리 영향\n32% 기업 인력 감축 계획",
+    "right_title": "기회",
+    "right_body": "GDP +16% 성장 기여\n13조 달러 경제 가치 창출",
+    "subtext": "Goldman Sachs / McKinsey Global Institute"
   },
   {
     "slide": 6,
-    "type": "content-quote",
-    "headline": "— Capgemini AI Future Labs",
-    "body": "\"2026년은\nAI의 진실의 순간이다.\n혁신의 퍼포먼스는 이제\n실제 배포 성과로\n증명되어야 한다.\""
+    "type": "content-highlight",
+    "headline": "AI 도입의 <span class='accent'>진짜 장벽</span>",
+    "emphasis": "기술이 아니라 실행력",
+    "body": "도입 기업 71% 중\n전사 확산은 36%에 불과",
+    "subtext": "기술은 준비됐다, 조직이 문제다"
   },
   {
     "slide": 7,
+    "type": "content-fullimage",
+    "headline": "AI 협업 시대의 생존법",
+    "badge_text": "핵심 인사이트",
+    "body": "파일럿은 끝났다\n이제 성과를 증명할 때",
+    "badge2_text": "2026년 목표",
+    "body2": "실험 → 확산 → 성과\n이 순서가 전부다",
+    "image_url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1080&q=80"
+  },
+  {
+    "slide": 8,
     "type": "cta",
-    "headline": "AI 변화,\n놓치지 마세요",
-    "cta_text": "팔로우하기",
-    "subtext": "매주 AI 트렌드 카드뉴스 업데이트",
-    "tag1": "#AI트렌드",
-    "tag2": "#2026트렌드",
-    "tag3": "#인공지능"
+    "headline": "매주 10분으로\nAI 경쟁력 완성",
+    "cta_text": "지금 팔로우하기"
   }
 ]
