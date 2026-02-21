@@ -41,6 +41,11 @@
       "description": "클린 에디토리얼 스타일 라이트그레이 + 그린 하이라이트",
       "accent_color": "#8BC34A",
       "background": "light-gray"
+    },
+    "blueprint": {
+      "description": "블루프린트 프레젠테이션 스타일 라이트블루그레이 + 소프트블루",
+      "accent_color": "#7BA7CC",
+      "background": "light-blue-gray"
     }
   },
   "dimensions": {

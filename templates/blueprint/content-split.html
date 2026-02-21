@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Split</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #EDF0F5;
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+
+    .dots {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .dots span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid {{accent_color}};
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 60px;
+    }
+
+    .headline {
+      font-size: 72px;
+      font-weight: 800;
+      color: #1E2D3D;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      word-break: keep-all;
+    }
+
+    .headline .accent {
+      color: {{accent_color}};
+    }
+
+    .subtext {
+      font-size: 34px;
+      color: #8B95A5;
+      text-align: center;
+      margin-bottom: 44px;
+      word-break: keep-all;
+    }
+
+    .split-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      max-width: 880px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 3px solid {{accent_color}};
+      padding: 44px 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .card-icon {
+      width: 100px;
+      height: 100px;
+      background: {{accent_color}};
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 52px;
+      height: 52px;
+    }
+
+    .card-content {
+      flex: 1;
+      padding-top: 4px;
+    }
+
+    .card-title {
+      font-size: 40px;
+      font-weight: 700;
+      color: #1E2D3D;
+      margin-bottom: 14px;
+      word-break: keep-all;
+    }
+
+    .card-body {
+      font-size: 34px;
+      color: #5A6677;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="dots"><span></span><span></span><span></span></div>
+
+  <div class="content">
+    <h1 class="headline">{{headline}}</h1>
+    <p class="subtext">{{subtext}}</p>
+
+    <div class="split-container">
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="#FFFFFF" stroke-width="1.5"/><line x1="16" y1="13" x2="8" y2="13" stroke="{{accent_color}}" stroke-width="1.5"/><line x1="16" y1="17" x2="8" y2="17" stroke="{{accent_color}}" stroke-width="1.5"/><polyline points="10 9 9 9 8 9" stroke="{{accent_color}}" stroke-width="1.5" fill="none"/></svg>
+        </div>
+        <div class="card-content">
+          <div class="card-title">{{left_title}}</div>
+          <div class="card-body">{{left_body}}</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" fill="none" stroke="#FFFFFF" stroke-width="1.5"/><path d="M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="#FFFFFF" stroke-width="1.5"/></svg>
+        </div>
+        <div class="card-content">
+          <div class="card-title">{{right_title}}</div>
+          <div class="card-body">{{right_body}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

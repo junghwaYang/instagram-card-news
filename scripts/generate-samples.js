@@ -123,6 +123,16 @@ const sampleSlides = [
   },
   {
     slide: 13,
+    type: 'content-fullimage',
+    headline: 'AI 마케팅의\n미래를 만나다',
+    badge_text: '핵심 인사이트',
+    body: 'AI 기반 마케팅 자동화로\n업무 효율을 극대화할 수 있습니다.',
+    badge2_text: '주의할 점',
+    body2: 'AI 도구 도입 시 데이터 품질과\n개인정보 보호를 반드시\n고려해야 합니다.',
+    image_url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1080&h=1350&fit=crop',
+  },
+  {
+    slide: 14,
     type: 'cta',
     headline: '더 많은 인사이트가\n궁금하다면',
     cta_text: '팔로우하고 트렌드 받아보기',
@@ -141,6 +151,7 @@ const templateStyles = [
   { name: 'toss', accent: '#3182F6' },
   { name: 'magazine', accent: '#3B82F6' },
   { name: 'clean', accent: '#8BC34A' },
+  { name: 'blueprint', accent: '#7BA7CC' },
 ];
 
 async function generateSamples() {

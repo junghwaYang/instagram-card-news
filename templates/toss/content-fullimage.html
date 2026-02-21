@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toss Full Image</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-fallback {
+    position: absolute;
+    inset: 0;
+    background: #191F28;
+  }
+
+  .bg-image {
+    position: absolute;
+    inset: 0;
+    background: url('{{image_url}}') center / cover no-repeat;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(25, 31, 40, 0.82) 0%,
+      rgba(25, 31, 40, 0.65) 40%,
+      rgba(25, 31, 40, 0.82) 100%
+    );
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 100px 72px;
+  }
+
+  .headline {
+    font-size: 64px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.4;
+    word-break: keep-all;
+    margin-bottom: 56px;
+  }
+
+  .line-accent {
+    color: {{accent_color}};
+  }
+
+  .line-white {
+    color: #FFFFFF;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .pill-badge {
+    display: inline-block;
+    background: {{accent_color}};
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 60px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+  }
+
+  .pill-badge-light {
+    background: rgba(255, 255, 255, 0.08);
+    color: #B0B8C1;
+    border: none;
+  }
+
+  .body-text {
+    font-size: 28px;
+    font-weight: 400;
+    color: #8B95A1;
+    text-align: center;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 40px;
+    left: 72px;
+    right: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .footer-account {
+    font-size: 18px;
+    color: #4E5968;
+  }
+
+  .footer-slide {
+    font-size: 18px;
+    color: #4E5968;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-fallback"></div>
+  <div class="bg-image" id="bgImage"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1 class="headline" id="headline">{{headline}}</h1>
+
+    <div class="section">
+      <span class="pill-badge">{{badge_text}}</span>
+      <p class="body-text">{{body}}</p>
+    </div>
+
+    <div class="section">
+      <span class="pill-badge pill-badge-light">{{badge2_text}}</span>
+      <p class="body-text">{{body2}}</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-account">@{{account_name}}</span>
+    <span class="footer-slide">{{slide_number}} / {{total_slides}}</span>
+  </div>
+
+  <script>
+    const el = document.getElementById('headline');
+    const raw = el.innerHTML;
+    const lines = raw.split(/<br\s*\/?>/i);
+    el.innerHTML = lines.map((line, i) => {
+      if (i === 0) return '<span class="line-accent">' + line.trim() + '</span>';
+      return '<span class="line-white">' + line.trim() + '</span>';
+    }).join('<br>');
+
+    const bgEl = document.getElementById('bgImage');
+    const bgUrl = bgEl.style.backgroundImage || window.getComputedStyle(bgEl).backgroundImage;
+    if (!bgUrl || bgUrl === 'none' || bgUrl.includes("''") || bgUrl.includes('""')) {
+      bgEl.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

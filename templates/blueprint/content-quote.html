@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Quote</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #EDF0F5;
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 72px;
+    }
+
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+
+    .dots {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .dots span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid {{accent_color}};
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .quote-mark {
+      font-size: 80px;
+      color: {{accent_color}};
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .quote-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border-left: 6px solid {{accent_color}};
+      padding: 52px 48px;
+      box-shadow: 0 4px 24px rgba(30, 45, 61, 0.06);
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .body-text {
+      font-size: 44px;
+      font-weight: 600;
+      color: #1E2D3D;
+      text-align: center;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .source {
+      font-size: 36px;
+      font-weight: 500;
+      color: #8B95A5;
+      text-align: center;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="dots"><span></span><span></span><span></span></div>
+
+  <div class="content">
+    <div class="quote-mark">&#x275D;</div>
+    <div class="quote-card">
+      <p class="body-text">{{body}}</p>
+    </div>
+    <p class="source">{{headline}}</p>
+  </div>
+</body>
+</html>

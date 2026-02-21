@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Stat</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #EDF0F5;
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+
+    .dots {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .dots span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid {{accent_color}};
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 72px;
+      width: 100%;
+    }
+
+    .headline {
+      font-size: 46px;
+      font-weight: 500;
+      color: #8B95A5;
+      text-align: center;
+      margin-bottom: 48px;
+      word-break: keep-all;
+    }
+
+    /* Donut chart ring */
+    .donut-wrapper {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      margin-bottom: 40px;
+    }
+
+    .donut-ring {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: conic-gradient(
+        {{accent_color}} 0deg 281deg,
+        #D5DBE5 281deg 360deg
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .donut-inner {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: #EDF0F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .emphasis {
+      font-size: 120px;
+      font-weight: 900;
+      color: {{accent_color}};
+      text-align: center;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .divider {
+      width: 56px;
+      height: 4px;
+      background: {{accent_color}};
+      border-radius: 2px;
+      margin: 0 auto 40px;
+    }
+
+    .body-text {
+      font-size: 38px;
+      font-weight: 400;
+      color: #5A6677;
+      text-align: center;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="dots"><span></span><span></span><span></span></div>
+
+  <div class="content">
+    <p class="headline">{{headline}}</p>
+
+    <div class="donut-wrapper">
+      <div class="donut-ring">
+        <div class="donut-inner">
+          <div class="emphasis">{{emphasis}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="body-text">{{body}}</p>
+  </div>
+</body>
+</html>

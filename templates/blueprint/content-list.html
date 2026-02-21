@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint List</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      background: #EDF0F5;
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+
+    .dots {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .dots span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid {{accent_color}};
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 60px;
+      width: 100%;
+    }
+
+    .headline {
+      font-size: 72px;
+      font-weight: 800;
+      color: #1E2D3D;
+      text-align: center;
+      line-height: 1.3;
+      word-break: keep-all;
+      margin-bottom: 48px;
+    }
+
+    .headline .accent {
+      color: {{accent_color}};
+    }
+
+    .list {
+      width: 100%;
+      max-width: 880px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #DDE3EC;
+      border-radius: 16px;
+      padding: 28px 32px;
+      border-left: 4px solid {{accent_color}};
+    }
+
+    .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: {{accent_color}};
+      flex-shrink: 0;
+      min-width: 48px;
+    }
+
+    .separator {
+      width: 2px;
+      height: 32px;
+      background: {{accent_color}};
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    .item-text {
+      font-size: 38px;
+      font-weight: 500;
+      color: #1E2D3D;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-line"></div>
+  <div class="dots"><span></span><span></span><span></span></div>
+
+  <div class="content">
+    <h2 class="headline">{{headline}}</h2>
+
+    <div class="list">
+      <div class="list-item">
+        <span class="number">01</span>
+        <span class="separator"></span>
+        <span class="item-text">{{item1}}</span>
+      </div>
+      <div class="list-item">
+        <span class="number">02</span>
+        <span class="separator"></span>
+        <span class="item-text">{{item2}}</span>
+      </div>
+      <div class="list-item">
+        <span class="number">03</span>
+        <span class="separator"></span>
+        <span class="item-text">{{item3}}</span>
+      </div>
+      <div class="list-item">
+        <span class="number">04</span>
+        <span class="separator"></span>
+        <span class="item-text">{{item4}}</span>
+      </div>
+      <div class="list-item">
+        <span class="number">05</span>
+        <span class="separator"></span>
+        <span class="item-text">{{item5}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

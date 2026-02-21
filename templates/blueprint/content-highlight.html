@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clean - Highlight</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Highlight</title>
   <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
     * {
       margin: 0;
       padding: 0;
@@ -15,8 +17,8 @@
       width: 1080px;
       height: 1350px;
       overflow: hidden;
-      background: #F0F0F0;
-      font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #EDF0F5;
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
       letter-spacing: -0.02em;
       position: relative;
       display: flex;
@@ -25,36 +27,28 @@
       justify-content: center;
     }
 
-    .brand {
+    .top-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: {{accent_color}};
+    }
+
+    .dots {
       position: absolute;
       top: 40px;
-      left: 48px;
+      right: 48px;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .brand-dot {
-      width: 18px;
-      height: 18px;
+    .dots span {
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      background: {{accent_color}};
-      display: inline-block;
-    }
-
-    .brand-name {
-      font-size: 28px;
-      font-weight: 600;
-      color: #9CA3AF;
-    }
-
-    .highlight {
-      background: linear-gradient(to top, {{accent_color}}66 45%, transparent 45%);
-      color: #1A1A1A;
-      padding: 0 4px;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
+      border: 2px solid {{accent_color}};
     }
 
     .content {
@@ -66,56 +60,56 @@
     }
 
     .headline {
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 700;
-      color: #9CA3AF;
+      color: {{accent_color}};
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
       word-break: keep-all;
       line-height: 1.3;
     }
 
     .highlight-card {
       background: #FFFFFF;
-      border-radius: 16px;
-      border-left: 5px solid {{accent_color}};
-      padding: 48px 40px;
+      border-radius: 24px;
+      border-left: 6px solid {{accent_color}};
+      padding: 56px 48px;
       width: 100%;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 24px rgba(30, 45, 61, 0.06);
     }
 
     .emphasis {
-      font-size: 60px;
+      font-size: 52px;
       font-weight: 800;
-      color: #1A1A1A;
-      line-height: 1.4;
+      color: #1E2D3D;
+      line-height: 1.45;
       word-break: keep-all;
       text-align: center;
     }
 
     .body-text {
-      font-size: 40px;
+      font-size: 38px;
       font-weight: 400;
-      color: #6B7280;
+      color: #5A6677;
       text-align: center;
       line-height: 1.75;
-      margin-top: 40px;
+      margin-top: 44px;
       word-break: keep-all;
     }
 
     .subtext {
-      font-size: 32px;
-      color: #9CA3AF;
+      font-size: 30px;
+      color: #8B95A5;
       text-align: center;
-      margin-top: 24px;
+      margin-top: 20px;
       word-break: keep-all;
     }
   </style>
 </head>
 <body>
-  <div class="brand">
-    <span class="brand-dot"></span>
-    <span class="brand-name">{{account_name}}</span>
-  </div>
+  <div class="top-line"></div>
+  <div class="dots"><span></span><span></span><span></span></div>
 
   <div class="content">
     <h1 class="headline">{{headline}}</h1>

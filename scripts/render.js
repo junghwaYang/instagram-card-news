@@ -67,6 +67,9 @@ function applyPlaceholders(html, slide, opts, index, total) {
     '{{tag2}}': slide.tag2 || '',
     '{{tag3}}': slide.tag3 || '',
     '{{badge_number}}': slide.badge_number || '',
+    // content-fullimage placeholders
+    '{{badge2_text}}': slide.badge2_text || '',
+    '{{body2}}': (slide.body2 || '').replace(/\n/g, '<br>'),
   };
 
   let result = html;

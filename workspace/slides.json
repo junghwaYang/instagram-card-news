@@ -2,72 +2,133 @@
   {
     "slide": 1,
     "type": "cover",
-    "headline": "<span class='highlight'>Gemini 3.1 Pro</span>\n무엇이 달라졌나",
-    "headline_label": "<span class='highlight'>AI UPDATE</span>",
-    "subtext": "Google의 최신 AI 모델, <span class='highlight'>핵심 변화</span> 총정리",
-    "tag1": "#Gemini",
-    "tag2": "#AI모델",
-    "tag3": "#Google"
+    "headline": "2025 디지털 마케팅\n트렌드 가이드",
+    "headline_label": "카드뉴스",
+    "subtext": "성공적인 마케팅을 위한 핵심 인사이트",
+    "tag1": "#디지털마케팅",
+    "tag2": "#AI트렌드",
+    "tag3": "#2025전략"
   },
   {
     "slide": 2,
-    "type": "content-stat",
-    "headline": "추론 능력 <span class='highlight'>2배 이상</span> 향상",
-    "emphasis": "77.1%",
-    "body": "ARC-AGI-2 벤치마크에서 77.1% 달성\n이전 모델(31.1%) 대비 <span class='highlight'>2배 이상</span> 향상된\n압도적인 추론 성능을 보여줍니다."
+    "type": "content-badge",
+    "badge_text": "TREND",
+    "badge_number": "01",
+    "headline": "AI가 마케팅의\n판도를 바꾼다",
+    "body": "AI 기반 콘텐츠 생성과 자동화가\n마케팅 산업의 새로운 표준이 되고 있습니다.",
+    "subtext": "2025년 최대 화두"
   },
   {
     "slide": 3,
-    "type": "content-grid",
-    "headline": "Gemini 3.1 Pro <span class='highlight'>핵심 역량</span>",
-    "grid1_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z'/><circle cx='12' cy='10' r='3'/></svg>",
-    "grid1_title": "추론 능력",
-    "grid1_desc": "ARC-AGI-2 77.1%",
-    "grid2_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>",
-    "grid2_title": "코딩 능력",
-    "grid2_desc": "SWE-Bench 80.6%",
-    "grid3_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>",
-    "grid3_title": "과학 지식",
-    "grid3_desc": "GPQA 94.3%",
-    "grid4_icon": "<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 24 24' fill='none' stroke='{{accent_color}}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/></svg>",
-    "grid4_title": "컨텍스트",
-    "grid4_desc": "100만 토큰"
+    "type": "content-stat",
+    "headline": "AI 마케팅 도입률",
+    "emphasis": "78%",
+    "body": "글로벌 기업의 78%가 마케팅에\nAI 도구를 활용하고 있습니다."
   },
   {
     "slide": 4,
-    "type": "content-highlight",
-    "headline": "새로운 <span class='highlight'>Deep Think</span> 모드",
-    "emphasis": "복잡한 문제를\n<span class='highlight'>깊이 사고</span>하는 AI",
-    "body": "수학, 과학, 코딩 등 복잡한 문제에서\n단계별 심층 추론을 수행하는\n새로운 사고 모드가 추가되었습니다.",
-    "subtext": ""
+    "type": "content-image",
+    "badge_number": "02",
+    "headline": "숏폼 콘텐츠의 시대",
+    "body": "15초 이내의 짧은 영상이\n가장 높은 참여율을 기록하고 있습니다.\n릴스, 쇼츠, 틱톡이 핵심 채널입니다.",
+    "image_url": ""
   },
   {
     "slide": 5,
-    "type": "content-list",
-    "headline": "주요 <span class='highlight'>업그레이드</span> 포인트",
-    "item1": "1M 토큰 입력 — 대규모 문서 한 번에 처리",
-    "item2": "65K 토큰 출력 — 더 길고 상세한 응답",
-    "item3": "Deep Think — 복잡한 추론 전용 모드",
-    "item4": "SVG 애니메이션 — 시각적 콘텐츠 생성",
-    "item5": "에이전틱 코딩 — 자율적 코드 작성"
+    "type": "content-steps",
+    "headline": "AI 마케팅 도입 3단계",
+    "step1": "현재 마케팅 프로세스 분석 및 자동화 가능 영역 파악",
+    "step2": "AI 도구 선정 및 파일럿 테스트 진행",
+    "step3": "성과 측정 후 전사 확대 적용",
+    "body": ""
   },
   {
     "slide": 6,
-    "type": "content-bigdata",
-    "headline": "컨텍스트 윈도우 <span class='highlight'>혁신</span>",
-    "bigdata_number": "1M",
-    "bigdata_unit": "토큰",
-    "body": "100만 토큰의 입력 컨텍스트로\n<span class='highlight'>대규모 코드베이스</span>와 문서를\n한 번에 분석할 수 있습니다.",
-    "subtext": "출력: 최대 65,536 토큰"
+    "type": "content-list",
+    "headline": "2025 핵심 마케팅 채널",
+    "item1": "Instagram Reels — 숏폼 콘텐츠 최강자",
+    "item2": "YouTube Shorts — 검색 연동 강점",
+    "item3": "TikTok — Z세대 핵심 플랫폼",
+    "item4": "LinkedIn — B2B 마케팅 필수",
+    "item5": "Threads — 텍스트 기반 신흥 채널"
   },
   {
     "slide": 7,
+    "type": "content-split",
+    "headline": "전통 마케팅 vs AI 마케팅",
+    "left_title": "전통 마케팅",
+    "left_body": "수동 타겟팅\n긴 제작 기간\n제한된 A/B 테스트\n높은 인건비",
+    "right_title": "AI 마케팅",
+    "right_body": "자동 세그먼테이션\n실시간 콘텐츠 생성\n무한 변형 테스트\n비용 효율성",
+    "subtext": ""
+  },
+  {
+    "slide": 8,
+    "type": "content-highlight",
+    "headline": "가장 중요한 한 가지",
+    "emphasis": "고객 경험이\n모든 것을 결정한다",
+    "body": "기술이 아무리 발전해도 결국\n고객의 마음을 사로잡는 것은\n진정성 있는 경험입니다.",
+    "subtext": ""
+  },
+  {
+    "slide": 9,
+    "type": "content-quote",
+    "badge_number": "03",
+    "headline": "— Seth Godin",
+    "body": "\"마케팅은 더 이상\n만든 것을 파는 기술이 아니라,\n팔릴 것을 만드는 기술이다.\"",
+    "subtext": "마케팅의 본질"
+  },
+  {
+    "slide": 10,
+    "type": "content",
+    "badge_number": "04",
+    "headline": "지금 시작하세요",
+    "body": "변화는 이미 시작되었습니다.\n2025년, 당신의 마케팅 전략을\nAI와 데이터로 무장하세요.\n\n작은 실험부터 시작하면\n큰 변화를 만들 수 있습니다."
+  },
+  {
+    "slide": 11,
+    "type": "content-grid",
+    "headline": "2025 마케팅 4대 핵심 전략",
+    "grid1_icon": "🎯",
+    "grid1_title": "타겟 정밀화",
+    "grid1_desc": "AI 기반 고객 세그먼트",
+    "grid2_icon": "📱",
+    "grid2_title": "숏폼 콘텐츠",
+    "grid2_desc": "15초 이내 영상 제작",
+    "grid3_icon": "🤖",
+    "grid3_title": "AI 자동화",
+    "grid3_desc": "콘텐츠 생성 자동화",
+    "grid4_icon": "📊",
+    "grid4_title": "데이터 분석",
+    "grid4_desc": "실시간 성과 측정"
+  },
+  {
+    "slide": 12,
+    "type": "content-bigdata",
+    "headline": "글로벌 AI 마케팅 시장 규모",
+    "bigdata_number": "48.8",
+    "bigdata_unit": "조원",
+    "body": "2025년 전 세계 AI 마케팅 시장은\n약 48.8조원 규모로 성장할 전망입니다.",
+    "subtext": "Source: Statista 2025"
+  },
+  {
+    "slide": 13,
+    "type": "content-fullimage",
+    "headline": "AI 마케팅의\n미래를 만나다",
+    "badge_text": "핵심 인사이트",
+    "body": "AI 기반 마케팅 자동화로\n업무 효율을 극대화할 수 있습니다.",
+    "badge2_text": "주의할 점",
+    "body2": "AI 도구 도입 시 데이터 품질과\n개인정보 보호를 반드시\n고려해야 합니다.",
+    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1080&h=1350&fit=crop"
+  },
+  {
+    "slide": 14,
     "type": "cta",
-    "headline": "<span class='highlight'>신규 AI 소식</span>을\n받고 싶다면",
-    "cta_text": "팔로우하고 소식 받기",
-    "subtext": "매주 새로운 AI 업데이트 소식",
-    "tag1": "#Gemini3",
-    "tag2": "#GoogleAI",
-    "tag3": "#AI소식"
+    "headline": "더 많은 인사이트가\n궁금하다면",
+    "cta_text": "팔로우하고 트렌드 받아보기",
+    "subtext": "매주 새로운 마케팅 인사이트",
+    "tag1": "#마케팅트렌드",
+    "tag2": "#AI마케팅",
+    "tag3": "#디지털전략"
   }
 ]
