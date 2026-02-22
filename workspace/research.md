@@ -1,205 +1,225 @@
-# Claude Code CLI 사용법 — 리서치 문서
+# 2026 AI 활용 입문 로드맵 — 리서치 결과
 
-> 작성일: 2026-02-21 | 카드뉴스 제작용 리서치
-
----
-
-## 핵심 포인트
-
-### 1. Claude Code란 무엇인가?
-Claude Code는 Anthropic이 만든 **터미널 기반 AI 코딩 에이전트**다. 코드베이스를 이해하고, 파일을 편집하고, 터미널 명령을 실행하며, Git 워크플로를 자연어 대화만으로 처리한다. 기존 IDE나 개발 환경을 바꾸지 않아도 그대로 사용할 수 있다는 것이 핵심 철학이다.
-
-> "Your workspace is wherever you work, and I'll meet you there."
-> — Claude Code 설계 철학 (Anthropic)
+> 작성일: 2026-02-22
+> 주제: 2026년 AI 활용 입문자를 위한 학습 로드맵
 
 ---
 
-### 2. 설치 방법 (3가지)
+## 1. 핵심 포인트 (AI 입문자 학습 로드맵 단계)
 
-| 방법 | 명령어 |
-|---|---|
-| macOS / Linux (권장) | `curl -fsSL https://claude.ai/install.sh \| bash` |
-| Windows PowerShell | `irm https://claude.ai/install.ps1 \| iex` |
-| npm 글로벌 설치 | `npm install -g @anthropic-ai/claude-code` |
+### 단계별 학습 로드맵: 기초 → 중급 → 실전
 
-- **요구 사항**: Node.js 18 이상
-- **지원 OS**: macOS 10.15+, Ubuntu 20.04+, Debian 10+, WSL(Windows)
-- 설치 후 `claude` 명령어로 즉시 실행 가능
-- `sudo npm install -g` 사용 금지 (권한 오류 및 보안 위험)
+**1단계 — AI 리터러시 (입문 1~2주)**
+- ChatGPT, Claude, Gemini 등 주요 AI 도구를 직접 사용해보기
+- 프롬프트 작성법(프롬프트 엔지니어링) 기초 학습
+- AI가 잘하는 것과 못하는 것의 경계 파악
+- 추천 자료: ChatGPT 공식 사용 가이드, YouTube 입문 영상
 
----
+**2단계 — 생산성 AI 활용 (1~2개월)**
+- 업무 자동화: 이메일 작성, 보고서 요약, 번역, 데이터 정리
+- 콘텐츠 생성: 블로그 초안, SNS 카피, 마케팅 문구
+- 이미지 생성: Midjourney, DALL-E 활용
+- AI 검색 도구: Perplexity AI로 리서치 자동화
 
-### 3. 주요 기능 5가지
+**3단계 — Python 기초 + 데이터 리터러시 (2~3개월)**
+- Python 문법, 자료구조, 함수 이해 (비전공자 대상)
+- 데이터 분석 기초: Pandas, NumPy
+- 데이터 시각화: Matplotlib, Seaborn
+- 추천 강의: Coursera의 Andrew Ng 'Machine Learning', fast.ai 'Practical Deep Learning'
 
-1. **코드베이스 온보딩**: 프로젝트 전체 구조, 의존성, 아키텍처를 자동으로 파악
-2. **멀티 파일 자동 편집**: 자연어 지시 한 마디로 여러 파일 동시 수정
-3. **테스트/빌드/린트 실행**: 코드 변경 후 자동 검증 파이프라인 실행
-4. **Git 워크플로 자동화**: 커밋 메시지 작성, PR 생성, 머지 컨플릭트 해결까지 처리
-5. **MCP 프로토콜 통합**: GitHub, Jira, Slack 등 300개 이상 외부 서비스 연동
+**4단계 — 머신러닝/AI 원리 이해 (3~6개월)**
+- 지도학습, 비지도학습, 강화학습 개념 이해
+- 주요 알고리즘 실습 (분류, 회귀, 군집화)
+- 딥러닝 기초: TensorFlow 또는 PyTorch
+- Kaggle 입문 대회 참여로 실전 감각 쌓기
 
----
+**5단계 — LLM 및 생성형 AI 활용 (6개월~1년)**
+- LLM(대형언어모델) 작동 원리 이해
+- RAG(Retrieval-Augmented Generation) 시스템 구축
+- AI 에이전트 설계 및 활용
+- API 연동으로 나만의 AI 앱 만들기
 
-### 4. 슬래시 명령어와 단축키
-
-- `/help` — 사용 가능한 명령어 목록 확인
-- `/clear` — 대화 초기화 (토큰 절약을 위해 새 작업 시작 전 필수)
-- `/compact` — 긴 대화 압축
-- `/model` — 사용 모델 변경 (Opus 4.6 / Sonnet 4.6 / Haiku 4.5)
-- `/plan` — 계획 모드 진입 (실행 전 Claude가 계획 먼저 제시)
-- `Shift+Tab` — 세 가지 권한 모드 전환 (일반 / 자동 수락 / 계획 모드)
-- `claude doctor` — 설치 상태 진단 및 문제 해결
-
-커스텀 슬래시 명령어도 만들 수 있다. `.claude/commands/` 폴더에 마크다운 파일을 넣으면 자동으로 `/파일명` 명령어로 등록된다.
-
----
-
-### 5. 멀티 서피스 지원
-
-Claude Code는 터미널 하나에 국한되지 않는다:
-- **웹 / iOS 앱**에서 긴 작업 시작 → `/teleport`로 터미널에 이어받기
-- **터미널 세션** → `/desktop`으로 Desktop 앱에서 비주얼 diff 리뷰
-- **Slack**에서 `@Claude` 멘션으로 버그 리포트 → PR 자동 생성
+**6단계 — 도메인 특화 AI 전문가 (1년 이상)**
+- 자신의 전문 분야(의료, 금융, 마케팅, 교육 등)에 AI 접목
+- AI 인프라, 배포, 운영 역량 개발
+- 피지컬 AI, 멀티모달 AI 등 최신 기술 지속 추적
 
 ---
 
-### 6. 지원 모델
+## 2. 관련 통계 및 수치
 
-Claude Code는 세 가지 모델을 지원한다:
-- **Claude Opus 4.6** — 복잡한 아키텍처, 대규모 리팩토링
-- **Claude Sonnet 4.6** — 일반 개발 작업, 기능 구현
-- **Claude Haiku 4.5** — 빠른 검색, 가벼운 쿼리
+### AI 시장 규모
+- **2026년 글로벌 AI 시장 규모**: 약 3,760억 달러 (Fortune Business Insights 기준)
+- **2034년까지 CAGR**: 26.6%로 성장하여 2조 4,800억 달러 도달 전망
+- **2026년 글로벌 AI 총지출**: 가트너(Gartner) 추산 **2조 5,000억 달러**
+- **에이전틱 AI 시장**: 2026년 약 100억 달러 → 2030년 약 470~530억 달러로 성장 전망
 
-엔터프라이즈 사용자는 Amazon Bedrock 또는 Google Cloud Vertex AI를 통해 자체 인프라에서 실행 가능.
+### 한국 시장 특화
+- **2026년 정부 AI 예산**: 10조 1,000억 원 (전년 3조 3,000억 원 대비 3배 증가)
+- **AI 인재양성 부트캠프 예산**: 23억 원 → 570억 원 (약 25배 증가)
+- **국내 기업 생성형 AI 도입률**: 2026년 85% 전망 (CIO Korea)
+- **한국 AI 기본법**: 2026년 시행 — AI 윤리·법률 기초 인식 필요
 
----
+### AI 도구 사용률
+- **ChatGPT**: 한국 월간 활성 사용자 **2,000만 명 이상** (2025년 8월 기준, Korea Times)
+- 글로벌 ChatGPT 월간 방문수: **58억 회** (2025년 9월 기준, DemandSage 확인)
 
-### 7. MCP(Model Context Protocol) 에코시스템
-
-MCP는 Claude Code를 외부 도구와 연결하는 표준 프로토콜이다:
-- GitHub PR 자동 리뷰 및 코멘트
-- Jira 티켓 자동 생성 및 업데이트
-- 프로덕션 데이터베이스 직접 쿼리
-- 2026년 1월 기준: **월 약 1억 다운로드**, **10,000개 이상의 MCP 서버** 존재
-
----
-
-### 8. 실제 활용 사례
-
-- **지루한 반복 작업 자동화**: 테스트 코드 작성, 린트 오류 수정, 의존성 업데이트, 릴리즈 노트 작성
-- **대규모 리팩토링**: 프로젝트 전체 코드 스타일 통일, API 구조 변경
-- **코드 온보딩**: 새 팀원이 복잡한 레거시 코드베이스를 빠르게 파악
-- **GitHub Actions CI/CD 자동화**: 훅 시스템으로 빌드/배포 파이프라인 제어
-- **`/install-github-app` 명령**: 실행 후 Claude가 PR을 자동 리뷰
+### AI 관련 일자리 통계
+- **2030년까지 AI 관련 일자리**: 연간 **1,300만 개**로 증가 전망 (Boterview)
+- **2030년까지 AI·자동화 신규 일자리**: 총 **1억 7,000만 개** 창출 (WEF)
+- **AI 관련 채용공고 증가율**: 2020년 대비 **134% 증가** (Indeed Hiring Lab)
+- **데이터·분석 직군의 AI 관련 포함 비율**: 전체 공고의 **45%** (Indeed)
+- **기업의 AI 인재 육성 의향**: 전 세계 기업의 **77%**가 직원 AI 역량 업스킬링 계획 (WEF 2025)
 
 ---
 
-## 관련 통계 및 수치
+## 3. 인용구
 
-| 지표 | 수치 | 시점 |
+> **"여러분은 AI 전문가가 될 필요는 없지만, AI 탐험가가 되어야 합니다."**
+> — Andrew Ng (스탠퍼드 교수, Coursera 공동 창업자, AI 교육 권위자)
+
+> **"AI는 인간 지능의 대체재가 아니라, 인간의 창의성과 독창성을 증폭시키는 도구입니다."**
+> — Fei-Fei Li (스탠퍼드 인간 중심 AI 연구소 공동 소장)
+
+---
+
+## 4. 최신 트렌드 (2025~2026년)
+
+### 생성형 AI (Generative AI)
+- ChatGPT, Claude, Gemini 등 대화형 AI가 업무·학습·창작의 기본 도구로 정착
+- 이미지(Midjourney, DALL-E), 영상(Sora, Runway), 음악(Suno) 생성 AI 급성장
+- 차세대 모델은 컨텍스트 윈도우 **20만 토큰 이상**으로 확장, 문서 전체를 한 번에 처리 가능
+
+### AI 에이전트 (Agentic AI)
+- 단순 답변에서 벗어나 **자율적으로 계획·실행**하는 에이전트 AI 등장
+- 멀티 에이전트 시스템: 여러 전문화된 AI가 협력하여 복잡한 업무 처리
+- 가트너 보고: 멀티에이전트 시스템 문의 **1,445% 급증** (2024 Q1 → 2025 Q2)
+- Deep Research 에이전트: 자율적으로 데이터 수집·분석·교차검증
+
+### 멀티모달 AI (Multimodal AI)
+- 텍스트·이미지·음성·영상을 동시에 처리하는 AI가 표준으로 자리잡음
+- Google, OpenAI, Mistral 등이 네이티브 멀티모달 지원 경쟁 중
+- 2026년에는 멀티모달이 '차별점'이 아닌 '기본 기능'으로 인식
+
+### 도메인 특화 AI
+- 의료: AI 진단 시장 **CAGR 24.6%** 성장 전망 (Medical Economics)
+- 금융: AI 기반 신용 평가, 알고리즘 트레이딩 일상화
+- 교육: AI 디지털 교과서, 맞춤형 학습 시스템(LXP) 확산
+- 마케팅: 생성형 AI로 광고 캠페인 공동 창작, 콘텐츠 대량 생산
+
+### 피지컬 AI (Physical AI)
+- 가트너가 2026년 주목 기술로 선정
+- AI가 로봇·자율주행·제조 현장 등 물리적 환경에 직접 작동
+- 디지털-물리 세계 경계 붕괴 가속화
+
+---
+
+## 5. 2026년 주요 AI 도구
+
+| 분류 | 도구 | 특징 |
 |---|---|---|
-| Claude Code 개발자 수 | **115,000명** | 2025년 7월 |
-| 주간 처리 코드 라인 수 | **1억 9,500만 줄** | 2025년 7월 |
-| Claude Code ARR | **$10억(약 1.4조원)** 돌파 | 출시 6개월 만에 달성 |
-| Anthropic 전체 ARR | **$140억** | 2026년 2월 |
-| ARR 성장률 | 연간 **10배 이상** | 3년 연속 |
-| 엔터프라이즈 구독 증가 | **4배** 증가 | 2026년 초 대비 연초 |
-| 개발자 AI 도구 사용률 | **84%** | 2025년 (Stack Overflow 2025) |
-| MCP 서버 수 | **10,000개 이상** | 2026년 1월 |
-| MCP 월간 다운로드 | **약 1억 건** | 2026년 1월 |
-| 개발 속도 향상 (팀 도입 사례) | **2~10배** | 2025년 |
-| 스토리 완료율 향상 | **164%** | 도입 팀 사례 |
-| PR 머지율 향상 | **약 2배** | 도입 팀 사례 |
+| **대화형 AI** | ChatGPT (OpenAI) | 세계 1위, 가장 넓은 사용자층, GPT-4o |
+| **대화형 AI** | Claude (Anthropic) | 긴 문서 처리·글쓰기 최강, 안전성 중시 |
+| **대화형 AI** | Gemini (Google) | Google 생태계 통합, 멀티모달 강점 |
+| **AI 검색** | Perplexity AI | 출처 기반 AI 검색, 리서치 자동화 |
+| **이미지 생성** | Midjourney | 고퀄리티 아트·일러스트 생성 |
+| **이미지 생성** | DALL-E 3 | ChatGPT 통합, 쉬운 접근성 |
+| **코딩 AI** | GitHub Copilot | 코드 자동완성·리뷰, 개발자 필수 도구 |
+| **코딩 AI** | Cursor | AI 네이티브 코드 에디터 |
+| **영상 생성** | Sora (OpenAI) | 텍스트→영상 변환, 크리에이터용 |
+| **업무 자동화** | Zapier AI | 노코드 AI 워크플로우 자동화 |
 
 ---
 
-## 인용구
+## 6. AI 활용 주요 분야
 
-### 인용구 1 — Dario Amodei (Anthropic CEO)
-> "앞으로 3~6개월 안에 AI가 코드의 90%를 작성하게 될 것이다. 12개월 안에는 사실상 모든 코드를 AI가 쓰는 세상이 올 수 있다."
-> — Dario Amodei, Anthropic CEO (2025년 3월)
+### 업무 자동화
+- 이메일 작성·정리, 회의록 요약, 보고서 초안 작성
+- 반복적인 데이터 입력·처리 자동화
+- 고객 응대 챗봇, 예약 시스템 자동화
 
-### 인용구 2 — Anthropic 공식 발표 (Accenture 파트너십)
-> "수만 명의 Accenture 개발자들이 Claude Code를 사용하게 되는 것은 역대 최대 규모의 배포다."
-> — Dario Amodei (2025년 12월, Anthropic-Accenture 파트너십 발표)
+### 콘텐츠 생성
+- SNS 카피라이팅, 블로그 포스팅, 뉴스레터
+- 이미지·썸네일 제작, 영상 스크립트
+- 마케팅 캠페인 기획 및 광고 카피
 
----
+### 데이터 분석
+- 대용량 데이터 요약 및 인사이트 도출
+- 시장 조사·경쟁사 분석 자동화
+- 비즈니스 대시보드 생성
 
-## 최신 트렌드 및 맥락
+### 코딩·개발
+- 초보자도 프롬프트로 앱 개발 가능
+- 버그 디버깅, 코드 리뷰, 문서화 자동화
+- 노코드/로우코드 AI 앱 개발 플랫폼 활성화
 
-### AI 코딩 도구 시장 경쟁 구도 (2025~2026)
-
-| 도구 | 특징 | 강점 |
-|---|---|---|
-| **Claude Code** | 터미널 기반, 에이전트형 | 대규모 리팩토링, 멀티 파일 편집, MCP 에코시스템 |
-| **GitHub Copilot** | IDE 통합, 20M+ 사용자 | 빠른 자동완성, 기업 생태계 |
-| **Cursor** | AI 네이티브 IDE | 프로젝트 전체 컨텍스트, 매끄러운 인라인 AI |
-
-- 세 도구 합산 시장 점유율 **70% 이상**
-- Cursor는 2025년 초 $2억 ARR → 연말 $5억 ARR로 급성장
-- Claude Code는 출시 6개월 만에 $10억 ARR — 업계에서 "ChatGPT 모멘트"로 불림
-- GitHub Copilot: **20M+ 사용자**, **유료 구독자 42% 시장 점유**
-
-### 핵심 트렌드
-
-1. **"Vibe Coding" 부상**: 자연어로 코드를 설명하고 AI가 구현하는 개발 방식이 주류화
-2. **에이전트형 AI로의 전환**: 단순 자동완성을 넘어, 전체 작업 흐름을 자율 실행하는 에이전트형 도구로 패러다임 이동
-3. **엔터프라이즈 확산**: Claude Code 엔터프라이즈 매출이 전체의 절반 이상을 차지, 대기업 도입 가속화
-4. **MCP 표준화**: 2026년 초 MCP가 AI-툴 통합의 사실상 표준으로 자리잡음
-5. **자율 PR 생성**: Claude Code가 Slack 멘션만으로 버그를 인식하고 PR을 만드는 수준에 도달
-6. **AI 코딩 시장 참여 개발자 비율**: 2025~2026년 기준 **67%의 개발자**가 AI 도구를 일상 업무에 활용 (2년 전 30% 대비 2배 이상 성장)
+### 학습·교육
+- 개인 맞춤형 AI 튜터로 빠른 학습
+- 언어 학습, 자격증 시험 준비
+- 복잡한 개념의 쉬운 설명 요청
 
 ---
 
-### 9. 권한 모드와 안전 설계
+## 7. 비전공자를 위한 학습 자원
 
-Claude Code는 3가지 권한 모드를 제공한다:
-- **기본 모드**: 모든 파일 수정/명령 실행 전 사용자 승인 필요
-- **자동 승인 모드** (Shift+Tab): 반복 승인 없이 빠르게 작업 진행
-- **플랜 모드**: 실행 전 Claude가 계획을 먼저 제시하고 승인 후 실행
+### 온라인 플랫폼
+- **Coursera**: Andrew Ng의 'AI for Everyone' (무료 청강 가능), Machine Learning 전문화 과정
+- **fast.ai**: 실습 중심 딥러닝 강의 (무료)
+- **구글 AI 아카데미**: 'Google AI Essentials' 무료 입문 과정
+- **뤼튼 AI 스쿨**: 한국어 생성형 AI 활용 무료 강의
+- **유튜브**: "테디노트", "빵형의 개발도상국" 등 한국어 AI 채널
 
-`Escape` 키로 언제든 작업 중단 가능. 안전한 에이전트 사용을 위한 핵심 설계.
-
----
-
-### 10. CLAUDE.md — 프로젝트 맞춤 설정
-
-프로젝트 루트에 `CLAUDE.md` 파일을 두면 Claude Code가 자동으로 읽어 프로젝트별 지침을 따른다:
-- 코딩 스타일, 네이밍 컨벤션
-- 테스트 실행 방법, 빌드 명령어
-- 프로젝트 아키텍처 설명
-- 개인용 `CLAUDE.local.md`도 지원 (gitignore 가능)
+### 비전공자의 핵심 강점
+- 자신의 **도메인 지식(금융, 의료, 마케팅, 법률 등)**이 최대 무기
+- 기술보다 **문제 정의 능력**이 AI 시대에 더 중요
+- 도메인 전문성 + AI 리터러시 조합이 희소가치 창출
 
 ---
 
-### 11. 요금제
+## 8. AI 활용 시 주의사항
 
-| 플랜 | 월 요금 | 특징 |
-|---|---|---|
-| Free | $0 | 제한된 사용량 |
-| Pro | $20 | 일반 개발 작업에 적합 |
-| Max (5x) | $100 | 대규모 프로젝트, Opus 모델 |
-| Max (20x) | $200 | 최대 사용량, 팀 프로젝트 |
+### 할루시네이션 (Hallucination)
+- AI가 존재하지 않는 사실, 인용, 통계를 자신있게 말하는 현상
+- 2026년에도 모든 AI 모델에서 지속적으로 발생
+- 대응법: 중요 정보는 반드시 원본 출처로 교차 검증 필수
 
----
+### 저작권 문제
+- AI 학습 데이터 저작권 소송 진행 중 (NYT vs OpenAI, Getty vs Stability AI)
+- AI 생성 콘텐츠의 저작권 귀속 불명확
+- 대응법: 상업적 사용 시 AI 생성 여부 명시, 라이선스 확인 필수
 
-### 12. 흔한 실수와 베스트 프랙티스
+### 개인정보·보안
+- 공개 AI 도구에 기밀 정보, 개인정보 입력 금지
+- 기업 내부 데이터를 일반 AI에 업로드 시 정보 유출 위험
+- 대응법: 엔터프라이즈 버전(비공개) 사용, AI 사용 정책 준수
 
-- **즉시 코딩 시작** ❌ → `/plan`으로 계획 먼저 세우기 ✅
-- **결과 검증 생략** ❌ → 변경 후 테스트/빌드 확인 ✅
-- **대화 무한 연장** ❌ → `/clear`로 새 작업마다 초기화 ✅
-- **테스트 코드 직접 수정** ❌ → 소스 코드를 수정하여 테스트 통과시키기 ✅
+### AI 편향성 (Bias)
+- 학습 데이터의 편향이 AI 결과물에 반영될 수 있음
+- 특정 문화·성별·인종에 대한 편향된 결과 가능
+- 대응법: 다양한 관점으로 프롬프트 변경, 비판적 시각 유지
+
+### 과의존 위험
+- AI 결과를 무비판적으로 수용하면 사고력·창의력 약화 우려
+- 대응법: AI를 보조 도구로만 활용, 최종 검토와 판단은 직접 수행
 
 ---
 
 ## 참고 출처
 
-- [Claude Code 공식 문서 (한국어)](https://docs.anthropic.com/ko/docs/agents-and-tools/claude-code/overview)
-- [Claude Code 설정 가이드](https://code.claude.com/docs/en/setup)
-- [GitHub - anthropics/claude-code](https://github.com/anthropics/claude-code)
-- [Claude Code ARR $1B 달성 (Anthropic 공식)](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone)
-- [Claude Code 115,000 개발자 돌파](https://ppc.land/claude-code-reaches-115-000-developers-processes-195-million-lines-weekly/)
-- [Anthropic ARR $140억 달성](https://www.saastr.com/anthropic-just-hit-14-billion-in-arr-up-from-1-billion-just-14-months-ago/)
-- [AI 코딩 도구 비교 2026](https://localaimaster.com/tools/best-ai-coding-tools)
-- [Claude Code 슬래시 명령어 공식 가이드](https://code.claude.com/docs/en/slash-commands)
-- [Dario Amodei AI 코딩 90% 발언](https://www.itpro.com/software/development/claude-code-creator-boris-cherny-says-software-engineers-are-more-important-than-ever-as-ai-transforms-the-profession-but-anthropic-ceo-dario-amodei-still-thinks-full-automation-is-coming)
-- [개발자 AI 도구 생산성 통계](https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools)
+- [Grand View Research — AI Market Size Report](https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-market)
+- [AI Statistics 2026 — Resourcera](https://resourcera.com/data/artificial-intelligence/ai-statistics/)
+- [State of Consumer AI 2025 — Blogbyash](https://blogbyash.com/translation/state-of-consumer-ai-2025/)
+- [ChatGPT Statistics 2026 — DemandSage](https://www.demandsage.com/chatgpt-statistics/)
+- [한국인 AI 앱 사용 순위 — AI매터스](https://aimatters.co.kr/news-report/ai-news/34571/)
+- [AI Job Growth Statistics 2026 — Index.dev](https://www.index.dev/blog/ai-job-growth-statistics)
+- [AI Jobs Barometer — PwC](https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html)
+- [7 Agentic AI Trends 2026 — Machine Learning Mastery](https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/)
+- [AI Tech Trends 2026 — IBM](https://www.ibm.com/think/news/ai-tech-trends-predictions-2026)
+- [AI Hallucination Report 2026 — AllAboutAI](https://www.allaboutai.com/resources/ai-statistics/ai-hallucinations/)
+- [2026 AI 엔지니어 로드맵 7단계 — CloudBro AI](https://www.cloudbro.ai/t/2026-ai-7/3766)
+- [2025 AI 트렌드 돌아보기 — SK AX](https://www.skax.co.kr/insight/trend/3614)
+- [AI 에이전트 트렌드 2026 — Google Cloud](https://cloud.google.com/resources/content/ai-agent-trends-2026)
+- [Top 10 AI Trends 2026 — Daffodil Software](https://insights.daffodilsw.com/blog/top-10-ai-trends-in-2026-your-go-to-list)
+- [AI Legal Forecast 2026 — CPO Magazine](https://www.cpomagazine.com/data-protection/2026-ai-legal-forecast-from-innovation-to-compliance/)
+- [AI Expert Quotes — Bernard Marr](https://bernardmarr.com/28-best-quotes-about-artificial-intelligence/)
+- [비전공자 AI 전문가 로드맵](https://info.tvape.kr/%EB%B9%84%EC%A0%84%EA%B3%B5%EC%9E%90%EB%8F%84-ai-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B0%80-%EB%90%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-%ED%98%84%EC%8B%A4%EC%A0%81%EC%9D%B8-%EC%B7%A8%EC%97%85-%EB%A1%9C/)

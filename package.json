@@ -7,6 +7,6 @@
     "sample": "node scripts/generate-samples.js"
   },
   "dependencies": {
-    "puppeteer": "^23.0.0"
+    "puppeteer": "^23.11.1"
   }
 }

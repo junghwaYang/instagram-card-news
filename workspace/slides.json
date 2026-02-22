@@ -2,76 +2,76 @@
   {
     "slide": 1,
     "type": "cover",
-    "headline": "Claude Code\n<span class='bar-highlight'>명령어</span>를 모르면 손해",
-    "subtext": "고수들만 쓰는 핵심 명령어 가이드"
+    "headline": "AI <span class='highlight'>어떻게 쓰는 건지</span>\n모르겠는 당신에게",
+    "subtext": "2026 AI 활용 입문 로드맵"
   },
   {
     "slide": 2,
-    "type": "content-stat",
-    "headline": "<span class='accent'>개발 속도</span> 이만큼 차이난다",
-    "emphasis": "1배 → 10배",
-    "body": "/plan 미사용 팀 vs\n/plan 사용 팀 생산성 비교"
+    "type": "content",
+    "headline": "AI는 <span class='highlight'>대화하는 도우미</span>입니다",
+    "body": "검색처럼 키워드가 아니라,<br>말하듯이 질문하면 됩니다.<br><br><span class='bubble'>이메일 대신 써줘</span><span class='bubble'>이거 요약해줘</span>"
   },
   {
     "slide": 3,
-    "type": "content-list",
-    "headline": "반드시 알아야 할 <span class='accent'>5대 명령어</span>",
-    "item1": "/plan — 계획 먼저",
-    "item2": "/clear — 대화 초기화",
-    "item3": "/compact — 긴 대화 압축",
-    "item4": "/model — 모델 변경",
-    "item5": "Shift+Tab — 권한 모드 전환"
+    "type": "content-steps",
+    "headline": "AI 활용 <span class='highlight'>3단계</span>",
+    "step1": "아무 질문이나 먼저 해보기",
+    "step2": "원하는 답이 나올 때까지 다시 물어보기",
+    "step3": "내 일상·업무에 직접 적용해보기"
   },
   {
     "slide": 4,
-    "type": "content-split",
-    "headline": "<span class='accent'>기본 모드</span> vs 자동 승인",
-    "left_title": "기본 모드",
-    "left_body": "모든 수정 전\n사용자 승인 필요\n안전하지만 느림",
-    "right_title": "자동 승인",
-    "right_body": "Shift+Tab 전환\n반복 승인 생략\n빠르게 작업 진행",
-    "subtext": "플랜 모드: 계획 후 승인 실행"
+    "type": "content-grid",
+    "headline": "이런 걸 AI한테 시킬 수 있어요",
+    "grid1_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='6' y='14' width='44' height='28' rx='4' stroke='#8BC34A' stroke-width='3'/><path d='M6 18L28 32L50 18' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
+    "grid1_title": "이메일 작성",
+    "grid1_desc": "\"거래처에 회신 써줘\"",
+    "grid2_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='12' y='6' width='32' height='44' rx='4' stroke='#8BC34A' stroke-width='3'/><line x1='20' y1='20' x2='36' y2='20' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='20' y1='28' x2='36' y2='28' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='20' y1='36' x2='30' y2='36' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
+    "grid2_title": "문서 요약",
+    "grid2_desc": "\"이 보고서 3줄 요약\"",
+    "grid3_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='28' cy='28' r='20' stroke='#8BC34A' stroke-width='3'/><ellipse cx='28' cy='28' rx='10' ry='20' stroke='#8BC34A' stroke-width='3'/><line x1='8' y1='28' x2='48' y2='28' stroke='#8BC34A' stroke-width='3'/></svg>",
+    "grid3_title": "번역",
+    "grid3_desc": "\"자연스럽게 번역해줘\"",
+    "grid4_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M28 8C21 8 16 14 16 20C16 26 22 30 22 34H34C34 30 40 26 40 20C40 14 35 8 28 8Z' stroke='#8BC34A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/><line x1='22' y1='40' x2='34' y2='40' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='24' y1='46' x2='32' y2='46' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
+    "grid4_title": "아이디어",
+    "grid4_desc": "\"블로그 주제 10개 추천\""
   },
   {
     "slide": 5,
-    "type": "content-grid",
-    "headline": "고수만 쓰는 <span class='accent'>4가지 세팅</span>",
-    "grid1_icon": "file",
-    "grid1_title": "CLAUDE.md",
-    "grid1_desc": "프로젝트별 규칙 자동 적용",
-    "grid2_icon": "refresh",
-    "grid2_title": "/clear 습관",
-    "grid2_desc": "새 작업마다 컨텍스트 초기화",
-    "grid3_icon": "check",
-    "grid3_title": "테스트 먼저",
-    "grid3_desc": "코드 수정 후 즉시 검증",
-    "grid4_icon": "link",
-    "grid4_title": "MCP 연동",
-    "grid4_desc": "GitHub·Jira 자동 연결"
+    "type": "content-badge",
+    "badge_text": "ChatGPT",
+    "headline": "가장 쉬운 <span class='highlight'>첫 번째 AI</span>",
+    "body": "가입하고 바로 대화 시작. 전 세계 2,000만 한국인이 이미 사용 중. 글쓰기, 검색, 이미지 생성까지.",
+    "subtext": "OpenAI · chatgpt.com"
   },
   {
     "slide": 6,
-    "type": "content-highlight",
-    "headline": "숨겨진 무기 <span class='accent'>CLAUDE.md</span>",
-    "emphasis": "한 번 설정, 자동 적용",
-    "body": "코딩 스타일, 빌드 명령어\n아키텍처 규칙을 파일 하나로\nClaude가 자동으로 읽고 따른다",
-    "subtext": "팀 전체 컨벤션 통일 가능"
+    "type": "content-badge",
+    "badge_text": "Claude",
+    "headline": "긴 문서도 <span class='highlight'>통째로 분석</span>",
+    "body": "계약서·논문 전체를 붙여넣고 \"핵심만 정리해줘.\" 자연스러운 글쓰기 품질 업계 1위. Artifacts로 차트·앱도 즉석 제작.",
+    "subtext": "Anthropic · claude.ai"
   },
   {
     "slide": 7,
-    "type": "content-fullimage",
-    "headline": "고수의 루틴 vs\n초보의 실수",
-    "badge_text": "핵심 정리",
-    "body": "/plan으로 계획 먼저\n/clear로 깔끔하게\nCLAUDE.md로 맞춤 설정",
-    "badge2_text": "흔한 실수",
-    "body2": "바로 코딩 시작 ❌\n결과 검증 생략 ❌\n대화 무한 연장 ❌",
-    "image_url": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1080&q=80"
+    "type": "content-badge",
+    "badge_text": "Gemini",
+    "headline": "Gmail·Drive와 <span class='highlight'>바로 연동</span>",
+    "body": "구글 계정만 있으면 시작. 메일 요약, 문서 초안, 사진 분석까지. Deep Research로 심층 리서치 자동화.",
+    "subtext": "Google · gemini.google.com"
   },
   {
     "slide": 8,
+    "type": "content-badge",
+    "badge_text": "MISSION",
+    "headline": "AI로 <span class='highlight'>직접 만들어보세요</span>",
+    "body": "이메일 하나, 블로그 초안 하나 — 오늘 AI로 완성해보세요",
+    "subtext": "경험이 가장 빠른 학습입니다"
+  },
+  {
+    "slide": 9,
     "type": "cta",
-    "headline": "다음 편 예고\n<span class='accent'>Claude 자동화 워크플로우</span>",
-    "subtext": "매주 실전 AI 개발 팁을 올립니다",
-    "cta_text": "팔로우하고 먼저 받기"
+    "headline": "지금 ChatGPT를 열고\n첫 질문을 던져보세요",
+    "cta_text": "저장하고 바로 시작하기"
   }
 ]

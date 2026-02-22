@@ -106,6 +106,45 @@
       line-height: 1.75;
       word-break: keep-all;
     }
+
+    .bubble {
+      display: inline-block;
+      background: #FFFFFF;
+      border: 2px solid #E5E7EB;
+      border-radius: 24px;
+      padding: 12px 28px;
+      margin: 8px 6px;
+      font-size: 36px;
+      font-weight: 600;
+      color: #374151;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 12px solid #FFFFFF;
+      filter: drop-shadow(0 2px 1px rgba(0,0,0,0.04));
+    }
+
+    .bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 35px;
+      width: 0;
+      height: 0;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-top: 13px solid #E5E7EB;
+    }
   </style>
 </head>
 <body>
