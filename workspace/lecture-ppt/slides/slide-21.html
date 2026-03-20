@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+html { background: #1A1A2E; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: #1A1A2E;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  padding: 24pt 28pt 22pt;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10pt;
+}
+.kicker {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #2D63E2;
+  letter-spacing: 0.6pt;
+  margin: 0;
+}
+h1 {
+  font-family: 'Arial Black', Impact, Arial, sans-serif;
+  font-size: 36pt;
+  line-height: 1.05;
+  margin: 0;
+  color: #FFFFFF;
+}
+h2 {
+  font-family: 'Arial Black', Impact, Arial, sans-serif;
+  font-size: 24pt;
+  line-height: 1.15;
+  margin: 0;
+  color: #FFFFFF;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: 14pt;
+  color: #2D63E2;
+}
+p {
+  margin: 0;
+  font-size: 12pt;
+  line-height: 1.35;
+  color: #FFFFFF;
+}
+.sub {
+  color: #B0B0B0;
+  font-size: 13pt;
+}
+.tiny { font-size: 10pt; color: #B0B0B0; }
+.body { flex: 1; display: flex; flex-direction: column; gap: 10pt; }
+.row { display: flex; gap: 10pt; align-items: stretch; }
+.row.center { align-items: center; justify-content: center; }
+.col { flex: 1; display: flex; flex-direction: column; gap: 8pt; }
+.card {
+  background: #20243C;
+  border: 1.5pt solid #2D63E2;
+  border-radius: 10pt;
+  padding: 10pt 12pt;
+  box-sizing: border-box;
+}
+.card.soft {
+  background: #252B49;
+  border-color: #3A4E9A;
+}
+ul, ol { margin: 0; padding-left: 18pt; display: flex; flex-direction: column; gap: 5pt; }
+li { color: #FFFFFF; font-size: 11.5pt; line-height: 1.3; }
+.chip {
+  display: inline-block;
+  color: #2D63E2;
+  font-weight: 700;
+}
+.metric { font-family: 'Arial Black', Impact, Arial, sans-serif; font-size: 28pt; color: #2D63E2; }
+.metric-small { font-family: 'Arial Black', Impact, Arial, sans-serif; font-size: 20pt; color: #2D63E2; }
+.arrow {
+  font-family: 'Arial Black', Impact, Arial, sans-serif;
+  color: #2D63E2;
+  font-size: 18pt;
+  text-align: center;
+}
+.flow-box {
+  background: #20243C;
+  border: 1.5pt solid #2D63E2;
+  border-radius: 8pt;
+  padding: 8pt;
+  min-height: 50pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4pt;
+}
+.flow-box p { text-align: center; font-size: 9.4pt; line-height: 1.22; }
+.flow-box h3 { text-align: center; font-size: 10pt; }
+.table { display: flex; flex-direction: column; gap: 3pt; }
+.tr { display: flex; gap: 3pt; }
+.th, .td {
+  flex: 1;
+  padding: 6pt 7pt;
+  border-radius: 6pt;
+  background: #252B49;
+  border: 1pt solid #3A4E9A;
+}
+.th { background: #223A7A; border-color: #2D63E2; }
+.th p { font-size: 9.8pt; font-weight: 700; text-align: center; }
+.td p { font-size: 9.6pt; line-height: 1.22; }
+.code {
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  line-height: 1.3;
+  white-space: pre-wrap;
+  color: #DCE6FF;
+}
+.footer {
+  border-top: 1pt solid #30447C;
+  padding-top: 5pt;
+}
+.footer p { font-size: 10pt; color: #B0B0B0; }
+.center-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 14pt; }
+.badge-row { display: flex; gap: 6pt; flex-wrap: wrap; }
+.badge-row p { font-size: 9.6pt; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="kicker">파트 4 · 스타일 비교</p>
+    <h1>8개 스타일 그리드</h1>
+    <p class="sub">주제와 브랜드 톤에 맞게 스타일만 교체하면 됩니다.</p>
+    <div class="body">
+      <div class="table">
+        <div class="tr"><div class="td"><p>minimal</p></div><div class="td"><p>bold</p></div><div class="td"><p>elegant</p></div><div class="td"><p>premium</p></div></div>
+        <div class="tr"><div class="td"><p>toss</p></div><div class="td"><p>magazine</p></div><div class="td"><p>clean</p></div><div class="td"><p>blueprint</p></div></div>
+      </div>
+      <div class="row">
+        <div class="card col"><p>브랜드 톤 유지</p></div>
+        <div class="card soft col"><p>같은 콘텐츠, 다른 분위기</p></div>
+      </div></div>
+    
+  </div>
+</body>
+</html>

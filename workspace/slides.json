@@ -2,76 +2,93 @@
   {
     "slide": 1,
     "type": "cover",
-    "headline": "AI <span class='highlight'>어떻게 쓰는 건지</span>\n모르겠는 당신에게",
-    "subtext": "2026 AI 활용 입문 로드맵"
+    "headline": "나노바나나2\n완전 정복",
+    "subtext": "구글이 새로 내놓은 AI 이미지 모델,\n뭐가 달라졌고 어떻게 쓸 수 있을까?",
+    "headline_label": "2026년 2월 출시 | 무료 사용 가능"
   },
   {
     "slide": 2,
-    "type": "content",
-    "headline": "AI는 <span class='highlight'>대화하는 도우미</span>입니다",
-    "body": "검색처럼 키워드가 아니라,<br>말하듯이 질문하면 됩니다.<br><br><span class='bubble'>이메일 대신 써줘</span><span class='bubble'>이거 요약해줘</span>"
+    "type": "content-badge",
+    "badge_text": "WHAT",
+    "headline": "<span class='highlight'>나노바나나2</span>란?",
+    "body": "구글이 2026년 2월 26일 출시한 최신 AI 이미지 생성 모델입니다. 공식 기술명은 Gemini 3.1 Flash Image이며, 텍스트로 설명하면 원하는 이미지를 자동으로 만들어줍니다. 기존 나노바나나 프로의 고품질은 그대로 유지하면서 속도는 2~3배 빨라지고, 비용은 절반으로 줄었습니다.",
+    "subtext": "Gemini 3.1 Flash Image"
   },
   {
     "slide": 3,
     "type": "content-steps",
-    "headline": "AI 활용 <span class='highlight'>3단계</span>",
-    "step1": "아무 질문이나 먼저 해보기",
-    "step2": "원하는 답이 나올 때까지 다시 물어보기",
-    "step3": "내 일상·업무에 직접 적용해보기"
+    "headline": "나노바나나의\n<span class='highlight'>진화 과정</span>",
+    "step1": "1세대 (2025.8) — 빠른 기본 이미지 생성. 출시 4일 만에 1,300만 신규 사용자 유치, 누적 50억 장 생성 돌파.",
+    "step2": "프로 (2025.11) — 고화질 정밀 묘사 특화. 유료 구독자(AI Pro/Ultra) 전용 모델로 출시.",
+    "step3": "나노바나나2 (2026.2) — 프로급 품질에 플래시 속도를 결합. 무료 플랜에서도 사용 가능해져 접근성 대폭 향상."
   },
   {
     "slide": 4,
-    "type": "content-grid",
-    "headline": "이런 걸 AI한테 시킬 수 있어요",
-    "grid1_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='6' y='14' width='44' height='28' rx='4' stroke='#8BC34A' stroke-width='3'/><path d='M6 18L28 32L50 18' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
-    "grid1_title": "이메일 작성",
-    "grid1_desc": "\"거래처에 회신 써줘\"",
-    "grid2_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='12' y='6' width='32' height='44' rx='4' stroke='#8BC34A' stroke-width='3'/><line x1='20' y1='20' x2='36' y2='20' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='20' y1='28' x2='36' y2='28' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='20' y1='36' x2='30' y2='36' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
-    "grid2_title": "문서 요약",
-    "grid2_desc": "\"이 보고서 3줄 요약\"",
-    "grid3_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='28' cy='28' r='20' stroke='#8BC34A' stroke-width='3'/><ellipse cx='28' cy='28' rx='10' ry='20' stroke='#8BC34A' stroke-width='3'/><line x1='8' y1='28' x2='48' y2='28' stroke='#8BC34A' stroke-width='3'/></svg>",
-    "grid3_title": "번역",
-    "grid3_desc": "\"자연스럽게 번역해줘\"",
-    "grid4_icon": "<svg viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M28 8C21 8 16 14 16 20C16 26 22 30 22 34H34C34 30 40 26 40 20C40 14 35 8 28 8Z' stroke='#8BC34A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/><line x1='22' y1='40' x2='34' y2='40' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/><line x1='24' y1='46' x2='32' y2='46' stroke='#8BC34A' stroke-width='3' stroke-linecap='round'/></svg>",
-    "grid4_title": "아이디어",
-    "grid4_desc": "\"블로그 주제 10개 추천\""
+    "type": "content-split",
+    "headline": "프로 vs <span class='highlight'>나노바나나2</span>",
+    "left_title": "나노바나나 프로",
+    "left_body": "고화질 정밀 묘사 특화\n유료 구독자만 사용 가능\n생성 시간 10~20초\nAPI 1K 기준 $0.134/장\n4K 지원 (제한적 비율)",
+    "right_title": "나노바나나2",
+    "right_body": "동급 품질 + 빠른 속도\n무료 플랜에서도 사용\n생성 시간 4~6초\nAPI 1K 기준 $0.067/장\n4K 전 비율 지원",
+    "subtext": "같은 품질, 2배 빠르고, 절반 가격"
   },
   {
     "slide": 5,
-    "type": "content-badge",
-    "badge_text": "ChatGPT",
-    "headline": "가장 쉬운 <span class='highlight'>첫 번째 AI</span>",
-    "body": "가입하고 바로 대화 시작. 전 세계 2,000만 한국인이 이미 사용 중. 글쓰기, 검색, 이미지 생성까지.",
-    "subtext": "OpenAI · chatgpt.com"
+    "type": "content-stat",
+    "headline": "생성 속도가\n<span class='highlight'>2~3배</span> 빨라졌다",
+    "emphasis": "4~6초",
+    "body": "나노바나나 프로는 이미지 한 장에 10~20초가 걸렸지만, 나노바나나2는 표준 해상도 기준 4~6초면 완성됩니다. 참고로 미드저니는 30~60초로 최대 6배 차이가 납니다."
   },
   {
     "slide": 6,
-    "type": "content-badge",
-    "badge_text": "Claude",
-    "headline": "긴 문서도 <span class='highlight'>통째로 분석</span>",
-    "body": "계약서·논문 전체를 붙여넣고 \"핵심만 정리해줘.\" 자연스러운 글쓰기 품질 업계 1위. Artifacts로 차트·앱도 즉석 제작.",
-    "subtext": "Anthropic · claude.ai"
+    "type": "content-bigdata",
+    "headline": "API 비용을\n<span class='highlight'>반으로</span> 줄였다",
+    "bigdata_number": "50",
+    "bigdata_unit": "% 절감",
+    "body": "1K 해상도 기준 장당 $0.067, 4K 해상도도 $0.15에 불과합니다. 기업이 대량으로 이미지를 생성할 때 실질적 비용 절감 효과가 큽니다.",
+    "subtext": "Vertex AI 공식 가격 기준 (2026.2)"
   },
   {
     "slide": 7,
-    "type": "content-badge",
-    "badge_text": "Gemini",
-    "headline": "Gmail·Drive와 <span class='highlight'>바로 연동</span>",
-    "body": "구글 계정만 있으면 시작. 메일 요약, 문서 초안, 사진 분석까지. Deep Research로 심층 리서치 자동화.",
-    "subtext": "Google · gemini.google.com"
+    "type": "content-list",
+    "headline": "<span class='highlight'>핵심 신기능</span>\n5가지",
+    "item1": "실시간 웹 검색 연동 — 최신 뉴스와 트렌드를 실시간 반영한 이미지를 바로 생성합니다",
+    "item2": "객체 일관성 강화 — 한 번에 5명 캐릭터 + 14개 객체를 일관되게 표현할 수 있습니다",
+    "item3": "4K 해상도 완전 지원 — 512px부터 4K(16MP)까지 다양한 비율로 생성 가능합니다",
+    "item4": "다국어 텍스트 렌더링 — 한국어 포함 18개 언어를 이미지 안에 선명하게 넣을 수 있습니다",
+    "item5": "SynthID 워터마크 — AI가 만든 이미지임을 자동 표시해 신뢰성과 투명성을 확보합니다"
   },
   {
     "slide": 8,
-    "type": "content-badge",
-    "badge_text": "MISSION",
-    "headline": "AI로 <span class='highlight'>직접 만들어보세요</span>",
-    "body": "이메일 하나, 블로그 초안 하나 — 오늘 AI로 완성해보세요",
-    "subtext": "경험이 가장 빠른 학습입니다"
+    "type": "content-grid",
+    "headline": "이렇게\n<span class='highlight'>활용</span>하세요",
+    "grid1_icon": "chart",
+    "grid1_title": "마케팅/광고",
+    "grid1_desc": "SNS 광고 소재, 배너,\n제품 상세 이미지 자동 생성",
+    "grid2_icon": "globe",
+    "grid2_title": "글로벌 현지화",
+    "grid2_desc": "하나의 이미지에서\n다국어 자동 번역 및 현지화",
+    "grid3_icon": "code",
+    "grid3_title": "개발자 자동화",
+    "grid3_desc": "AI Studio, Vertex AI\nAPI로 대량 파이프라인 구축",
+    "grid4_icon": "zap",
+    "grid4_title": "실시간 콘텐츠",
+    "grid4_desc": "최신 뉴스, 트렌드 기반\n이미지 즉시 시각화"
   },
   {
     "slide": 9,
+    "type": "content-list",
+    "headline": "어디서\n<span class='highlight'>사용</span>할 수 있나요?",
+    "item1": "제미나이 앱 — 무료 플랜에서 기본 모델로 바로 사용 가능합니다 (일일 한도 있음)",
+    "item2": "구글 검색 AI 모드 — 141개국 구글 검색에서 이미지 생성 기능이 무료 제공됩니다",
+    "item3": "구글 렌즈 — 카메라로 촬영한 대상을 기반으로 새로운 이미지를 만들 수 있습니다",
+    "item4": "구글 애즈 — 광고 크리에이티브를 AI로 자동 생성, 광고주 계정 내 무료 사용",
+    "item5": "Vertex AI / AI Studio — 기업용 API로 대규모 이미지 자동화 파이프라인을 구축할 수 있습니다"
+  },
+  {
+    "slide": 10,
     "type": "cta",
-    "headline": "지금 ChatGPT를 열고\n첫 질문을 던져보세요",
-    "cta_text": "저장하고 바로 시작하기"
+    "headline": "지금 제미나이 앱에서\n무료로 시작하세요",
+    "cta_text": "팔로우하고 AI 소식 받기"
   }
 ]
